@@ -11,22 +11,10 @@ export default function App() {
     }
   });
 
-  // useEffect(() => {
-  //   function getAppData() {
-  //     fetch('http://localhost:3001/api/skills')
-  //     .then(response => response.json())
-  //     .then(data => setState(prevState => ({
-  //       ...prevState,
-  //       skills: data
-  //     })));
-  //   }
-  //   getAppData();
-  // }, []);
-
   useEffect(() => {
     async function getAppData() {
       const skills = await fetch('http://localhost:3001/api/skills')
-      .then(res => res.json());
+        .then(res => res.json());
 
       setState(prevState => ({
         ...prevState,
@@ -36,15 +24,33 @@ export default function App() {
     getAppData();
   }, []);
 
-  function addSkill(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setState({
-      skills: [...state.skills, state.newSkill],
-      newSkill: {
-        skill: '',
-        level: '3'
-      }
-    })
+
+    try {
+      const skill = await fetch('http://localhost:3001/api/skills', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'Application/json'
+        },
+        body: JSON.stringify(state.newSkill)
+      }).then(res => res.json())
+  
+      setState({
+        skills: [...state.skills, skill],
+        newSkill: {
+          skill: '',
+          level: '3'
+        }
+      })
+      
+    } catch (error) {
+        console.log(error);      
+    }
+
+
+
+
   }
 
   function handleChange(e) {
@@ -67,7 +73,7 @@ export default function App() {
         </article>
       ))}
       <hr />
-      <form onSubmit={addSkill}>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>SKILL</span>
           <input name="skill" value={state.newSkill.skill} onChange={handleChange} />
