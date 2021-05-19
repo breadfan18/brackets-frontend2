@@ -59,6 +59,17 @@ export default function App() {
     }));
   }
 
+  function handleEdit(id) {
+    const skillToEdit = state.skills.find(skill => skill._id === id);
+
+    //We set the skill and level properties of skillToEdit to state
+    //so that those values will populate in the Skill and Level fields
+    setState(prevState => ({
+      ...prevState,
+      newSkill: skillToEdit
+    }))
+  }
+
   return (
     <section>
       <h2>DEV SKILLS</h2>
@@ -67,7 +78,10 @@ export default function App() {
         <article key={i}>
           <div>{s.skill}</div> 
           <div>{s.level}</div>
-          <div className='controls'>{'✏️'}</div>
+          <div 
+            className='controls'
+            onClick={() => handleEdit(s._id)}
+            >{'✏️'}</div>
         </article>
       ))}
       <hr />
