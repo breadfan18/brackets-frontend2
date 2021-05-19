@@ -8,7 +8,8 @@ export default function App() {
     newSkill: {
       skill: '',
       level: '3'
-    }
+    },
+    editMode: false
   });
 
   useEffect(() => {
@@ -27,30 +28,59 @@ export default function App() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      const skill = await fetch('http://localhost:3001/api/skills', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'Application/json'
-        },
-        body: JSON.stringify(state.newSkill)
-      }).then(res => res.json())
+    if (state.editMode) {
+      //update the existing skill
+      try {
+        const {skill, level, _id} = state.newSkill;
+        const skills = await fetch(`http://localhost:3001/api/skills/${_id}`, {
+          method: 'PUT',
+          header: {
+            'Content-type': 'Application/json'
+          },
+          body: JSON.stringify({skill, level})
+        }).then(res => res.json());
 
-      setState({
-        skills: [...state.skills, skill],
-        newSkill: {
-          skill: '',
-          level: '3'
-        }
-      })
+        setState(prevState => ({
+          ...prevState,
+          skills,
+          editMode: false,
+          newSkill: {
+            skill: '',
+            level: '3'
+          }
+        }))
 
-    } catch (error) {
-      console.log(error);
+      } catch (error) {
+        
+      }
+    } else {
+      //create a new skill
+      try {
+        const skill = await fetch('http://localhost:3001/api/skills', {
+          method: 'POST',
+          headers: {
+            'Content-type': 'Application/json'
+          },
+          body: JSON.stringify(state.newSkill)
+        }).then(res => res.json())
+  
+        setState({
+          skills: [...state.skills, skill],
+          newSkill: {
+            skill: '',
+            level: '3'
+          }
+        })
+  
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
   function handleChange(e) {
     setState(prevState => ({
+      ...prevState,
       skills: prevState.skills,
       newSkill: {
         ...prevState.newSkill,
@@ -66,7 +96,8 @@ export default function App() {
     //so that those values will populate in the Skill and Level fields
     setState(prevState => ({
       ...prevState,
-      newSkill: skillToEdit
+      newSkill: skillToEdit,
+      editMode: true
     }))
   }
 
@@ -100,7 +131,7 @@ export default function App() {
             <option value="5">5</option>
           </select>
         </label>
-        <button>ADD SKILL</button>
+        <button>{state.editMode ? 'EDIT SKILL': 'ADD SKILL'}</button>
       </form>
     </section>
   );
