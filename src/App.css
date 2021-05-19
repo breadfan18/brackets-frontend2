@@ -24,6 +24,18 @@ section > article {
 article > div {
   padding: 0.5rem;
 }
+
+article > div:nth-child(1){
+  flex-grow: 1
+}
+
+.controls {
+  cursor: pointer;
+  /* transform: rotate(90deg); */
+  background-color: orangered;
+}
+
+
 article > div:nth-child(2) {
   width: 2rem;
   background-color: #f17d80;
@@ -66,3 +78,4 @@ button:hover {
   color: white;
   background-color: #737495;
 }
+

@@ -35,7 +35,7 @@ export default function App() {
         },
         body: JSON.stringify(state.newSkill)
       }).then(res => res.json())
-  
+
       setState({
         skills: [...state.skills, skill],
         newSkill: {
@@ -43,14 +43,10 @@ export default function App() {
           level: '3'
         }
       })
-      
+
     } catch (error) {
-        console.log(error);      
+      console.log(error);
     }
-
-
-
-
   }
 
   function handleChange(e) {
@@ -69,7 +65,9 @@ export default function App() {
       <hr />
       {state.skills.map((s, i) => (
         <article key={i}>
-          <div>{s.skill}</div> <div>{s.level}</div>
+          <div>{s.skill}</div> 
+          <div>{s.level}</div>
+          <div className='controls'>{'✏️'}</div>
         </article>
       ))}
       <hr />
