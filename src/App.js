@@ -101,6 +101,21 @@ export default function App() {
     }))
   }
 
+  async function handleDelete(id) {
+    try {
+      const skills = await fetch(`http://localhost:3001/api/skills/${id}`, {
+        method: 'DELETE'
+      }).then(res => res.json())
+
+      setState(prevState => ({
+        ...prevState,
+        skills
+      }))
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <section>
       <h2>DEV SKILLS</h2>
@@ -113,6 +128,10 @@ export default function App() {
             className='controls'
             onClick={() => handleEdit(s._id)}
             >{'✏️'}</div>
+          <div 
+            className='controls'
+            onClick={() => handleDelete(s._id)}
+            >{'🗑'}</div>
         </article>
       ))}
       <hr />
