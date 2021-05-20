@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import {auth} from './services/firebase';
 import "./App.css";
 import Header from './components/Header/Header';
+
 
 export default function App() {
   const [state, setState] = useState({
@@ -11,6 +13,10 @@ export default function App() {
     },
     editMode: false
   });
+
+  const [userState, setUserState] = useState({
+    user: null
+  })
 
   useEffect(() => {
     async function getAppData() {
@@ -23,6 +29,14 @@ export default function App() {
       }));
     }
     getAppData();
+
+    //Setup authentication observer
+    const unsubscribe = auth.onAuthStateChanged(user => setUserState(user))
+
+     //Clean up function
+     return function () {
+      unsubscribe();
+    }
   }, []);
 
   async function handleSubmit(e) {
@@ -118,7 +132,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header user={userState} />
       <section>
         <h2>DEV SKILLS</h2>
         <hr />
