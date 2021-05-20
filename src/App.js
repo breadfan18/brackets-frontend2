@@ -34,7 +34,7 @@ export default function App() {
         const {skill, level, _id} = state.newSkill;
         const skills = await fetch(`http://localhost:3001/api/skills/${_id}`, {
           method: 'PUT',
-          header: {
+          headers: {
             'Content-type': 'Application/json'
           },
           body: JSON.stringify({skill, level})
