@@ -85,3 +85,6 @@ button:hover {
   background-color: #737495;
 }
 
+button:disabled {
+  background-color: lightgray;
+}

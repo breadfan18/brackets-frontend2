@@ -4,7 +4,7 @@ import styles from './Header.module.css'
 const Header = (props) => {
     return (
         <header className={styles.header}>
-            <h1>{'⚛'} React Dev Skills</h1>
+            <h1>Soccer Brackets</h1>
             <nav>
                 <ul>
                     {
