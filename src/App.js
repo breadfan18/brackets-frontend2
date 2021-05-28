@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { auth } from './services/firebase';
 import Header from './components/Header/Header';
+import { getGroups } from './services/soccer-api';
 import "./App.css";
 
 export default function App() {
@@ -9,8 +10,17 @@ export default function App() {
     user: null
   });
 
-  useEffect(function() {
-    
+  const [groups, setGroups] = useState([])
+
+  useEffect(() => {
+    getGroups()
+    .then(groups => {
+      console.log(groups);
+      setGroups(groups);
+    })
+
+
+
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
