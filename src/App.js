@@ -1,23 +1,37 @@
 import { useState, useEffect } from "react";
 import { auth } from './services/firebase';
 import Header from './components/Header/Header';
+import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import "./App.css";
 
 export default function App() {
-  
-  const [ userState, setUserState ] = useState({
+
+
+  const [groups, setGroups] = useState([]);
+
+  const [userState, setUserState] = useState({
     user: null
   });
 
-  const [groups, setGroups] = useState([])
 
   useEffect(() => {
     getGroups()
-    .then(groups => {
-      console.log(groups);
-      setGroups(groups);
-    })
+      .then(groups => {
+        let sortedGroups = groups.sort((a,b) => {
+          return (a.group_id > b.group_id) ? 1 : -1;
+        })  
+        
+        let finalGroups = [];
+
+        for (let i = 0; i < sortedGroups.length; i+= 4) {
+          const groupChunk = sortedGroups.slice(i , i+4);
+          finalGroups.push(groupChunk)
+        }
+
+        console.log(finalGroups);
+        setGroups(finalGroups);
+      })
 
 
 
@@ -25,24 +39,26 @@ export default function App() {
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
     // clean up function
-    return function() {
+    return function () {
       // clean up subscriptions
       unsubscribe();
     }
   }, [userState.user]);
 
-  
+
   return (
     <>
-    <Header user={userState.user} />
-    <div>
-      {
-        userState.user ? 
-        <article>{userState.user.displayName}</article>
-        :
-        <article>Not logged in</article>
-      }
-    </div>
+      <Header user={userState.user} />
+      <div>
+        {
+          userState.user ?
+            <article>{userState.user.displayName}</article>
+            :
+            <article>Not logged in</article>
+        }
+      </div>
+      <Groups groups={groups}/>
+      
     </>
   );
 }
