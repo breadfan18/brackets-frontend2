@@ -18,14 +18,14 @@ export default function App() {
   useEffect(() => {
     getGroups()
       .then(groups => {
-        let sortedGroups = groups.sort((a,b) => {
+        let sortedGroups = groups.sort((a, b) => {
           return (a.group_id > b.group_id) ? 1 : -1;
-        })  
-        
+        })
+
         let finalGroups = [];
 
-        for (let i = 0; i < sortedGroups.length; i+= 4) {
-          const groupChunk = sortedGroups.slice(i , i+4);
+        for (let i = 0; i < sortedGroups.length; i += 4) {
+          const groupChunk = sortedGroups.slice(i, i + 4);
           finalGroups.push(groupChunk)
         }
 
@@ -45,6 +45,14 @@ export default function App() {
     }
   }, [userState.user]);
 
+  function handleSubmit(e) {
+    if(!userState.user) return;
+
+    e.preventDefault();
+
+    console.log('submit clicked');
+  }
+
 
   return (
     <>
@@ -57,8 +65,10 @@ export default function App() {
             <article>Not logged in</article>
         }
       </div>
-      <Groups groups={groups}/>
-      
+      <form onSubmit={handleSubmit}>
+        <Groups groups={groups} />
+      </form>
+
     </>
   );
 }

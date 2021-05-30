@@ -1,14 +1,15 @@
-* {
+/* * {
   box-sizing: border-box;
 }
+
 #root {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
+
 
 section {
   flex-grow: 1;
@@ -21,7 +22,6 @@ section {
 section > article {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   min-width: 17.25rem;
   color: white;
   margin: 0.1rem;
@@ -37,7 +37,6 @@ article > div:nth-child(1){
 
 .controls {
   cursor: pointer;
-  /* transform: rotate(90deg); */
   background-color: orangered;
 }
 
@@ -87,4 +86,4 @@ button:hover {
 
 button:disabled {
   background-color: lightgray;
-}
+} */

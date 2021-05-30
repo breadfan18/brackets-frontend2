@@ -1,3 +1,27 @@
 .groupCard {
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    margin: 10px;
+    border-top-left-radius: 30px;
+}
+
+.eachTeam {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 1rem;
+}
+
+.eachTeam:not(div.eachTeam:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.groupName{
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    border-top-left-radius: 30px;
+    padding: 10px 0 10px 20px;
+    
 }
