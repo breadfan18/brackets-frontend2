@@ -3,9 +3,52 @@ import { auth } from './services/firebase';
 import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
+import { createPicks } from './services/picks-service';
 import "./App.css";
 
 export default function App() {
+
+
+  const groupPicks = {
+    groupStagePicks: {
+      'A': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      },
+      'B': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      },
+      'C': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      },
+      'D': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      },
+      'E': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      },
+      'F': {
+        1: 'England',
+        2: 'Spain',
+        3: 'France',
+        4: 'Portugal'
+      }
+    }
+  }
 
 
   const [groups, setGroups] = useState([]);
@@ -45,12 +88,16 @@ export default function App() {
     }
   }, [userState.user]);
 
-  function handleSubmit(e) {
-    if(!userState.user) return;
-
+  async function handleSubmit(e) {
+    if (!userState.user) return;
     e.preventDefault();
 
-    console.log('submit clicked');
+
+    try {
+      await createPicks(groupPicks, userState.user.uid);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 
