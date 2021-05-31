@@ -3,7 +3,7 @@ import style from './Groups.module.css';
 
 const Groups = (props) => {
 
-    const groupLetter = ["A", "B", "C", "D", "E", "F"]
+    const groupLetter = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
     return (
         <>
@@ -11,9 +11,9 @@ const Groups = (props) => {
                 {
                     props.groups.map((group, idx) =>
                         <Group
-                            group={group}
-                            key={groupLetter[idx]}
-                            groupLetter={groupLetter[idx]}
+                            group={group.teams}
+                            key={group.name}
+                            groupLetter={group.name}
                         />
                     )
                 }

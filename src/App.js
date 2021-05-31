@@ -60,25 +60,9 @@ export default function App() {
 
   useEffect(() => {
     getGroups()
-      .then(test => {
-        setGroups(test.groups);
-
-        // let sortedGroups = groups.sort((a, b) => {
-        //   return (a.group_id > b.group_id) ? 1 : -1;
-        // })
-
-        // let finalGroups = [];
-
-        // for (let i = 0; i < sortedGroups.length; i += 4) {
-        //   const groupChunk = sortedGroups.slice(i, i + 4);
-        //   finalGroups.push(groupChunk)
-        // }
-
-        console.log(groups);
-        // setGroups(finalGroups);
+      .then(wc2018Groups => {
+        setGroups(wc2018Groups.groups);
       })
-
-
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -117,7 +101,6 @@ export default function App() {
       <form onSubmit={handleSubmit}>
         <Groups groups={groups} />
       </form>
-
     </>
   );
 }
