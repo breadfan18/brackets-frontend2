@@ -60,20 +60,22 @@ export default function App() {
 
   useEffect(() => {
     getGroups()
-      .then(groups => {
-        let sortedGroups = groups.sort((a, b) => {
-          return (a.group_id > b.group_id) ? 1 : -1;
-        })
+      .then(test => {
+        setGroups(test.groups);
 
-        let finalGroups = [];
+        // let sortedGroups = groups.sort((a, b) => {
+        //   return (a.group_id > b.group_id) ? 1 : -1;
+        // })
 
-        for (let i = 0; i < sortedGroups.length; i += 4) {
-          const groupChunk = sortedGroups.slice(i, i + 4);
-          finalGroups.push(groupChunk)
-        }
+        // let finalGroups = [];
 
-        console.log(finalGroups);
-        setGroups(finalGroups);
+        // for (let i = 0; i < sortedGroups.length; i += 4) {
+        //   const groupChunk = sortedGroups.slice(i, i + 4);
+        //   finalGroups.push(groupChunk)
+        // }
+
+        console.log(groups);
+        // setGroups(finalGroups);
       })
 
 

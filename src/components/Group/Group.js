@@ -5,7 +5,7 @@ const Group = (props) => {
         <article className={style.groupCard} variant='outlined'>
             <div className={style.groupName}>Group {props.groupLetter}</div>
             {
-                props.group.map((country, idx) => (
+                props.teams.map((country, idx) => (
                     <div className={style.eachTeam} key={idx}>
                         <p name='country'>{country.country}</p>
                         <select name='level'>
