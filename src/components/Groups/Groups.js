@@ -2,9 +2,6 @@ import Group from '../Group/Group';
 import style from './Groups.module.css';
 
 const Groups = (props) => {
-
-    const groupLetter = ["A", "B", "C", "D", "E", "F", "G", "H"]
-
     return (
         <>
             <div className={style.groupsContainer}>
