@@ -64,6 +64,8 @@ export default function App() {
         setGroups(wc2018Groups.groups);
       })
 
+      console.log(groups);
+
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
