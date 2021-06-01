@@ -8,21 +8,6 @@
     border-bottom-right-radius: 30px;
 }
 
-.eachTeam {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1.5rem 0 1rem;
-    cursor: grab;
-}
-
-select {
-    border: none;
-}
-
-.eachTeam:not(div.eachTeam:last-child) {
-    border-bottom: 1px solid black;
-}
-
 .groupName{
     background-color: black;
     color: white;
