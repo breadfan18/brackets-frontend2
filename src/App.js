@@ -8,7 +8,6 @@ import "./App.css";
 
 export default function App() {
 
-
   const groupPicks = {
     groupStagePicks: {
       'A': {
@@ -52,6 +51,8 @@ export default function App() {
 
 
   const [groups, setGroups] = useState([]);
+
+  // const [teams, setTeams] = useState([]);
 
   const [userState, setUserState] = useState({
     user: null

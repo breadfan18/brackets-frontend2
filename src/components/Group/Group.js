@@ -1,34 +1,33 @@
 import style from './Group.module.css';
 import Team from '../../components/Team/Team';
+import {useState} from 'react';
 import { sortableContainer, sortableElement } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
-
+const SortableTeamsContainer = sortableContainer(({ children }) => <div className='teams'>{children}</div>);
+const SortableTeam = sortableElement(({ team }) => <Team key={team} team={team} />)
+  
 const Group = (props) => {
+    const [teams, setTeams] = useState(props.group);
 
-    // const onlyTeams = [];
-    // props.group.map(teams =>
-    //     onlyTeams.push(teams.name)
-    // )
+    
 
-    // console.log(onlyTeams);
-
+    const onSortEnd = ({oldIndex, newIndex}) => setTeams(arrayMove(teams, oldIndex, newIndex))
 
     return (
         <article className={style.groupCard}>
             <div className={style.groupName}>{props.groupLetter}</div>
-            {
-                props.group.map((team, idx) => (
-                    // <div className={style.eachTeam} key={idx}>
-                    //     <p>{team.name}</p>
-                    //     <p>{team.code}</p>
-                    // </div>
-                    <Team 
-                    team={team} 
-                    key={team}
-                    />
-                ))
-            }
+            <SortableTeamsContainer onSortEnd={onSortEnd}>
+                {
+                    props.group.map((team, i) => (
+                        <SortableTeam
+                            index={i}
+                            team={team}
+                            key={team.code}
+                        />
+                    ))
+                }
+            </SortableTeamsContainer>
         </article>
     )
 }
