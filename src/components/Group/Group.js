@@ -19,7 +19,7 @@ const Group = (props) => {
             <div className={style.groupName}>{props.groupLetter}</div>
             <SortableTeamsContainer onSortEnd={onSortEnd}>
                 {
-                    props.group.map((team, i) => (
+                    teams.map((team, i) => (
                         <SortableTeam
                             index={i}
                             team={team}
