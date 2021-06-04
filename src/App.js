@@ -52,6 +52,19 @@ export default function App() {
 
   const [groups, setGroups] = useState([]);
 
+  const [userPicks, setUserPicks] = useState({
+    picks: [],
+    newPick: {
+      groupStagePicks: {},
+      roundOf16Picks: {},
+      quartersPicks: {},
+      semisPicks: {},
+      finalPick: String,
+      totalPoints: Number,
+      uid: String
+    }
+  })
+
   const [userState, setUserState] = useState({
     user: null
   });
@@ -63,7 +76,7 @@ export default function App() {
         setGroups(wc2018Groups.groups);
       })
 
-      console.log(groups);
+    console.log(groups);
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -77,11 +90,16 @@ export default function App() {
 
   async function handleSubmit(e) {
     if (!userState.user) return;
+
     e.preventDefault();
 
 
     try {
-      await createPicks(groupPicks, userState.user.uid);
+      const newUserPick = await createPicks(groupPicks, userState.user.uid);
+
+      // setUserPicks({
+      //   picks=[...userPicks.picks, newUserPick]
+      // })
     } catch (err) {
       console.log(err);
     }
@@ -99,9 +117,11 @@ export default function App() {
             <article>Not logged in</article>
         }
       </div>
-      <form onSubmit={handleSubmit}>
-        <Groups groups={groups} />
-      </form>
+
+      <Groups
+        groups={groups}
+      />
+
     </>
   );
 }
