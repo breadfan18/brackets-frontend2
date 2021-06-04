@@ -55,7 +55,7 @@ export default function App() {
   const [userPicks, setUserPicks] = useState({
     picks: [],
     newPick: {
-      groupStagePicks: {},
+      groupStagePicks: [],
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},
@@ -89,17 +89,21 @@ export default function App() {
   }, [userState.user]);
 
   async function handleSubmit(e) {
+    e.preventDefault();
     if (!userState.user) return;
 
-    e.preventDefault();
-
+    console.log('this is working');
+    
+    setUserPicks({
+      newPick: {
+        groupStagePicks: groups
+      }
+    });
 
     try {
-      const newUserPick = await createPicks(groupPicks, userState.user.uid);
+      await createPicks(groupPicks, userState.user.uid);
 
-      // setUserPicks({
-      //   picks=[...userPicks.picks, newUserPick]
-      // })
+      
     } catch (err) {
       console.log(err);
     }
@@ -120,6 +124,7 @@ export default function App() {
 
       <Groups
         groups={groups}
+        submitPicks={handleSubmit}
       />
 
     </>
