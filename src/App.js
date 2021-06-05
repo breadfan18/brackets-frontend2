@@ -55,7 +55,10 @@ export default function App() {
   const [userPicks, setUserPicks] = useState({
     picks: [],
     newPick: {
-      groupStagePicks: [],
+      groupA: [],
+      groupB: [],
+      groupC: [],
+      groupD: [],
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},

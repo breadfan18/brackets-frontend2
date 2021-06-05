@@ -9,15 +9,14 @@ const SortableTeam = sortableElement(({ team }) => <Team key={team} team={team} 
   
 const Group = (props) => {
     const [teams, setTeams] = useState(props.group);
+    
 
     function handleUpdatedGroup() {
-        props.setFinalPicks(...props.finalPicks, teams);
+        props.setFinalPicks(teams)
     }
 
     const onSortEnd = ({oldIndex, newIndex}) => {
         setTeams(arrayMove(teams, oldIndex, newIndex))
-
-        handleUpdatedGroup()
     };
 
     return (
@@ -34,6 +33,7 @@ const Group = (props) => {
                     ))
                 }
             </SortableTeamsContainer>
+            <button onClick={handleUpdatedGroup}>Save</button>
         </article>
     )
 }
