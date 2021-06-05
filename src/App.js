@@ -3,7 +3,7 @@ import { auth } from './services/firebase';
 import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
-import { createPicks, updatePicks } from './services/picks-service';
+import { createPicks, updatePicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
 
 export default function App() {
@@ -41,6 +41,19 @@ export default function App() {
       .then(wc2018Groups => {
         setGroups(wc2018Groups.groups);
       })
+    
+      async function getAppData() {
+        if(!userState.user) return;
+        const picks = await fetchUserPicks(userState.user.uid);
+        console.log(picks);
+
+        setUserPicks({
+          allPicks: [...userPicks.allPicks, picks],
+          picks: {...userPicks.picks}
+        })
+      }
+
+      getAppData();
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -102,7 +115,7 @@ export default function App() {
 
       <Groups
         groups={groups}
-        submitPicks={handlePicksSave}
+        saveGroupPicks={handlePicksSave}
       />
       <button onClick={handleSubmit}>Submit Picks</button>
 

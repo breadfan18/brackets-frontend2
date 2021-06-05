@@ -10,7 +10,9 @@ const Header = (props) => {
                     {
                         props.user ?
                             <>
-                                <li>Welcome, {props.user.displayName}</li>
+                                <li>Current Picks</li>
+                                <li>Leaderboard</li>
+                                <li>Simulate</li>
                                 <li>
                                     <img
                                         style={{height: '2.5rem', borderRadius: '50%'}}

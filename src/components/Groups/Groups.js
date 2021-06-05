@@ -17,7 +17,7 @@ const Groups = (props) => {
                             groupLetter={group.name}
                             finalPicks={finalPicks}
                             setFinalPicks={setFinalPicks}
-                            submitPicks={props.submitPicks}
+                            saveGroupPick={props.saveGroupPicks}
                         />
                     )
                 }

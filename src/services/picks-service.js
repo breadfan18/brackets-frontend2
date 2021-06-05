@@ -1,5 +1,9 @@
 const BASE_URL = 'http://localhost:3001/api/picks';
 
+function fetchUserPicks(uid) {
+    return fetch(`${BASE_URL}?uid=${uid}`).then(res => res.json());
+}
+
 function createPicks(data, uid) {
     return fetch(BASE_URL, {
         method: 'POST',
@@ -23,5 +27,6 @@ function updatePicks(data, _id) {
 
 export {
     createPicks,
-    updatePicks
+    updatePicks,
+    fetchUserPicks
 }
