@@ -33,7 +33,7 @@ const Group = (props) => {
                     ))
                 }
             </SortableTeamsContainer>
-            <button onClick={handleUpdatedGroup}>Save</button>
+            <button onClick={(e) => props.saveGroupPicks(teams, e, props.groupLetter)}>Save</button>
         </article>
     )
 }

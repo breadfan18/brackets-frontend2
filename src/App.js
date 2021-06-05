@@ -3,83 +3,44 @@ import { auth } from './services/firebase';
 import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
-import { createPicks } from './services/picks-service';
+import { createPicks, updatePicks } from './services/picks-service';
 import "./App.css";
 
 export default function App() {
 
-  const groupPicks = {
-    groupStagePicks: {
-      'A': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      },
-      'B': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      },
-      'C': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      },
-      'D': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      },
-      'E': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      },
-      'F': {
-        1: 'England',
-        2: 'Spain',
-        3: 'France',
-        4: 'Portugal'
-      }
-    }
-  }
-
-
   const [groups, setGroups] = useState([]);
 
   const [userPicks, setUserPicks] = useState({
-    picks: [],
-    newPick: {
-      groupA: [],
-      groupB: [],
-      groupC: [],
-      groupD: [],
+    allPicks: [],
+    picks: {
+      'Group A': [],
+      'Group B': [],
+      'Group C': [],
+      'Group D': [],
+      'Group E': [],
+      'Group F': [],
+      'Group G': [],
+      'Group H': [],
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},
       finalPick: String,
       totalPoints: Number,
       uid: String
-    }
+    },
+    pickSaved: false
   })
 
   const [userState, setUserState] = useState({
     user: null
   });
 
-
+  //UseEffect Hook
   useEffect(() => {
     getGroups()
       .then(wc2018Groups => {
         setGroups(wc2018Groups.groups);
       })
-
-    console.log(groups);
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -91,26 +52,40 @@ export default function App() {
     }
   }, [userState.user]);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+
+  //handleSubmit Function
+  function handlePicksSave(teams, e, groupLetterKey) {
     if (!userState.user) return;
 
-    console.log('this is working');
-    
     setUserPicks({
-      newPick: {
-        groupStagePicks: groups
+      allPicks: userPicks.allPicks,
+      picks: {
+        ...userPicks.picks,
+        [groupLetterKey]: teams
       }
     });
+  }
 
-    try {
-      await createPicks(groupPicks, userState.user.uid);
+  async function handleSubmit(e) {
+    if (!userState.user) return;
+    e.preventDefault();
 
-      
-    } catch (err) {
-      console.log(err);
+
+
+    if (userPicks.pickSaved) {
+      console.log('Pick already saved');
+    } else {
+      const pick = await createPicks(userPicks.picks, userState.user.uid);
+      setUserPicks({
+        allPicks: [...userPicks.allPicks, pick],
+        pickSaved: true
+      }
+      )
     }
   }
+
+
+
 
 
   return (
@@ -127,8 +102,9 @@ export default function App() {
 
       <Groups
         groups={groups}
-        submitPicks={handleSubmit}
+        submitPicks={handlePicksSave}
       />
+      <button onClick={handleSubmit}>Submit Picks</button>
 
     </>
   );

@@ -10,6 +10,18 @@ function createPicks(data, uid) {
     }).then(res => res.json())
 }
 
+
+function updatePicks(data, _id) {
+    return fetch(`${BASE_URL}/${_id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'Application/json'
+        },
+        body: JSON.stringify({data})
+    }).then(res => res.json())
+}
+
 export {
-    createPicks
+    createPicks,
+    updatePicks
 }

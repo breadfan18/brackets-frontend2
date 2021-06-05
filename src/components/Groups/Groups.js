@@ -6,8 +6,6 @@ const Groups = (props) => {
 
     const [finalPicks, setFinalPicks] = useState([]);
 
-    console.log(finalPicks);
-
     return (
         <>
             <div className={style.groupsContainer}>
@@ -19,11 +17,12 @@ const Groups = (props) => {
                             groupLetter={group.name}
                             finalPicks={finalPicks}
                             setFinalPicks={setFinalPicks}
+                            submitPicks={props.submitPicks}
                         />
                     )
                 }
             </div>
-            <button onClick={props.submitPicks}>Submit Picks</button>
+            {/* <button onClick={props.submitPicks}>Submit Picks</button> */}
         </>
     )
 }
