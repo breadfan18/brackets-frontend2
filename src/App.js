@@ -64,7 +64,7 @@ export default function App() {
       // clean up subscriptions
       unsubscribe();
     }
-  }, [userState.user, userPicks.allPicks, userPicks.picks]);
+  }, [userState.user]);
 
 
   //handleSubmit Function
@@ -100,49 +100,63 @@ export default function App() {
   return (
     <>
       <Header user={userState.user} />
-      <Switch>
-      <Route
-          exact path='/home'
-          render={() =>
-            <div>HOME PAGE</div>
-          }
-        />
-        <Route
-          exact path='/groups'
-          render={() =>
+      <div>
+        {
+          userState.user ?
             <>
-              <Groups
-                groups={groups}
-                saveGroupPicks={handlePicksSave}
-              />
-              <button onClick={handleSubmit}>Submit Picks</button>
+              <article>Welcome {userState.user.displayName}!!</article>
+              <Switch>
+                <Route
+                  exact path='/home'
+                  render={() =>
+                    <div>HOME PAGE</div>
+                  }
+                />
+                <Route
+                  exact path='/groups'
+                  render={() =>
+                    <>
+                      <Groups
+                        groups={groups}
+                        saveGroupPicks={handlePicksSave}
+                      />
+                      <button onClick={handleSubmit}>Submit Picks</button>
+                    </>
+                  }
+                />
+                <Route
+                  exact path='/currentPicks'
+                  render={() =>
+                    <CurrentPicks
+                      user={userState.user}
+                      allPicks={userPicks.allPicks}
+                    />
+                  }
+                />
+
+                <Route
+                  exact path='/leaderboard'
+                  render={() =>
+                    <div>LEADER BOARD</div>
+                  }
+                />
+
+                <Route
+                  exact path='/simulate'
+                  render={() =>
+                    <div>SIMULATE</div>
+                  }
+                />
+              </Switch>
+
+
+
             </>
-          }
-        />
-        <Route
-          exact path='/currentPicks'
-          render={() =>
-            <CurrentPicks 
-              user={userState.user}
-              allPicks={userPicks.allPicks}
-            />
-          }
-        />
-      
-        <Route
-          exact path='/leaderboard'
-          render={() =>
-            <div>LEADER BOARD</div>
-          }
-        />
-      
-        <Route
-          exact path='/simulate'
-          render={() =>
-            <div>SIMULATE</div>
-          }
-        />
-      </Switch>
+            :
+            <article>Not logged in</article>
+        }
+      </div>
+
 
 
 
