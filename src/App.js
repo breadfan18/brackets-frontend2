@@ -7,6 +7,7 @@ import { createPicks, updatePicks, fetchUserPicks } from './services/picks-servi
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import { Route, Switch } from 'react-router-dom';
+import { Divider } from "@material-ui/core";
 
 export default function App() {
   const [groups, setGroups] = useState([]);
@@ -113,10 +114,10 @@ export default function App() {
       </div> */}
 
       <Switch>
-        <Route
-          exact path='/currentPicks'
+      <Route
+          exact path='/home'
           render={() =>
-            <CurrentPicks />
+            <div>HOME PAGE</div>
           }
         />
         <Route
@@ -131,7 +132,26 @@ export default function App() {
             </>
           }
         />
-
+        <Route
+          exact path='/currentPicks'
+          render={() =>
+            <CurrentPicks />
+          }
+        />
+      
+        <Route
+          exact path='/leaderboard'
+          render={() =>
+            <div>LEADER BOARD</div>
+          }
+        />
+      
+        <Route
+          exact path='/simulate'
+          render={() =>
+            <div>SIMULATE</div>
+          }
+        />
       </Switch>
 
 

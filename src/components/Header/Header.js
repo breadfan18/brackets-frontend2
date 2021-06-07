@@ -14,7 +14,7 @@ const Header = (props) => {
                         props.user ?
                             <>
                                 <li>
-                                    <Link to="/currentPicks">Home</Link>
+                                    <Link to="/home">Home</Link>
                                 </li>
                                 <li>
                                     <Link to="/groups">Groups</Link>
@@ -23,10 +23,10 @@ const Header = (props) => {
                                     <Link to="/currentPicks">Current Picks</Link>
                                 </li>
                                 <li>
-                                    <Link to="/currentPicks">Leaderboard</Link>
+                                    <Link to="/leaderboard">Leaderboard</Link>
                                 </li>
                                 <li>
-                                    <Link to="/currentPicks">Simulate</Link>
+                                    <Link to="/simulate">Simulate</Link>
                                 </li>
                                 <li>
                                     <img
