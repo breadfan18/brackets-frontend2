@@ -1,6 +1,3 @@
-import { useEffect } from 'react';
-import { fetchUserPicks } from '../../services/picks-service';
-
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0][0];
     let groupsArray = [];

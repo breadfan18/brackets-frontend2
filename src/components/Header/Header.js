@@ -1,8 +1,6 @@
 import { login, logout } from '../../services/firebase';
 import styles from './Header.module.css'
-import { Route, Link } from 'react-router-dom';
-import CurrentPicks from '../../pages/CurrentPicks/CurrentPicks';
-
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
     return (

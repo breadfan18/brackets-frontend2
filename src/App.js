@@ -3,7 +3,7 @@ import { auth } from './services/firebase';
 import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
-import { createPicks, updatePicks, fetchUserPicks } from './services/picks-service';
+import { createPicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import { Route, Switch } from 'react-router-dom';
@@ -64,7 +64,7 @@ export default function App() {
       // clean up subscriptions
       unsubscribe();
     }
-  }, [userState.user]);
+  }, [userState.user, userPicks.allPicks, userPicks.picks]);
 
 
   //handleSubmit Function
@@ -97,21 +97,9 @@ export default function App() {
   }
 
 
-
-
-
   return (
     <>
       <Header user={userState.user} />
-      {/* <div>
-        {
-          userState.user ?
-            <article>{userState.user.displayName}</article>
-            :
-            <article>Not logged in</article>
-        }
-      </div> */}
-
       <Switch>
       <Route
           exact path='/home'
