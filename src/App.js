@@ -7,7 +7,6 @@ import { createPicks, updatePicks, fetchUserPicks } from './services/picks-servi
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import { Route, Switch } from 'react-router-dom';
-import { Divider } from "@material-ui/core";
 
 export default function App() {
   const [groups, setGroups] = useState([]);
