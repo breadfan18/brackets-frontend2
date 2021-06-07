@@ -46,7 +46,7 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
       const picks = await fetchUserPicks(userState.user.uid);
-      console.log(picks);
+      // console.log(picks);
 
       setUserPicks({
         allPicks: [...userPicks.allPicks, picks],
@@ -134,7 +134,10 @@ export default function App() {
         <Route
           exact path='/currentPicks'
           render={() =>
-            <CurrentPicks />
+            <CurrentPicks 
+              user={userState.user}
+              allPicks={userPicks.allPicks}
+            />
           }
         />
       
