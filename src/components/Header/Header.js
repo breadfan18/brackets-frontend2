@@ -1,7 +1,8 @@
 import { login, logout } from '../../services/firebase';
 import styles from './Header.module.css'
-import { Route } from 'react-router-dom';
-import CurrentPicks from '../../components/CurrentPicks/CurrentPicks';
+import { Route, Link } from 'react-router-dom';
+import CurrentPicks from '../../pages/CurrentPicks/CurrentPicks';
+
 
 const Header = (props) => {
     return (
@@ -12,9 +13,21 @@ const Header = (props) => {
                     {
                         props.user ?
                             <>
-                                <Route path='/test' component={CurrentPicks} />
-                                <li>Leaderboard</li>
-                                <li>Simulate</li>
+                                <li>
+                                    <Link to="/currentPicks">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/groups">Groups</Link>
+                                </li>
+                                <li>
+                                    <Link to="/currentPicks">Current Picks</Link>
+                                </li>
+                                <li>
+                                    <Link to="/currentPicks">Leaderboard</Link>
+                                </li>
+                                <li>
+                                    <Link to="/currentPicks">Simulate</Link>
+                                </li>
                                 <li>
                                     <img
                                         style={{height: '2.5rem', borderRadius: '50%'}}

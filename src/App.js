@@ -5,7 +5,8 @@ import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import { createPicks, updatePicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
-import { Route } from 'react-router-dom';
+import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
+import { Route, Switch } from 'react-router-dom';
 
 export default function App() {
   const [groups, setGroups] = useState([]);
@@ -41,19 +42,19 @@ export default function App() {
       .then(wc2018Groups => {
         setGroups(wc2018Groups.groups);
       })
-    
-      async function getAppData() {
-        if(!userState.user) return;
-        const picks = await fetchUserPicks(userState.user.uid);
-        console.log(picks);
 
-        setUserPicks({
-          allPicks: [...userPicks.allPicks, picks],
-          picks: {...userPicks.picks}
-        })
-      }
+    async function getAppData() {
+      if (!userState.user) return;
+      const picks = await fetchUserPicks(userState.user.uid);
+      console.log(picks);
 
-      getAppData();
+      setUserPicks({
+        allPicks: [...userPicks.allPicks, picks],
+        picks: { ...userPicks.picks }
+      })
+    }
+
+    getAppData();
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -102,21 +103,38 @@ export default function App() {
   return (
     <>
       <Header user={userState.user} />
-      {/* <Route  component={Groups} /> */}
-      <div>
+      {/* <div>
         {
           userState.user ?
             <article>{userState.user.displayName}</article>
             :
             <article>Not logged in</article>
         }
-      </div>
+      </div> */}
 
-      <Groups
-        groups={groups}
-        saveGroupPicks={handlePicksSave}
-      />
-      <button onClick={handleSubmit}>Submit Picks</button>
+      <Switch>
+        <Route
+          exact path='/currentPicks'
+          render={() =>
+            <CurrentPicks />
+          }
+        />
+        <Route
+          exact path='/groups'
+          render={() =>
+            <>
+              <Groups
+                groups={groups}
+                saveGroupPicks={handlePicksSave}
+              />
+              <button onClick={handleSubmit}>Submit Picks</button>
+            </>
+          }
+        />
+
+      </Switch>
+
+
 
     </>
   );
