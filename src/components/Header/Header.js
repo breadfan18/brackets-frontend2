@@ -1,5 +1,7 @@
 import { login, logout } from '../../services/firebase';
 import styles from './Header.module.css'
+import { Route } from 'react-router-dom';
+import CurrentPicks from '../../components/CurrentPicks/CurrentPicks';
 
 const Header = (props) => {
     return (
@@ -10,7 +12,7 @@ const Header = (props) => {
                     {
                         props.user ?
                             <>
-                                <li>Current Picks</li>
+                                <Route path='/test' component={CurrentPicks} />
                                 <li>Leaderboard</li>
                                 <li>Simulate</li>
                                 <li>

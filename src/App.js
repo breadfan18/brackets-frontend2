@@ -5,9 +5,9 @@ import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import { createPicks, updatePicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
+import { Route } from 'react-router-dom';
 
 export default function App() {
-
   const [groups, setGroups] = useState([]);
 
   const [userPicks, setUserPicks] = useState({
@@ -83,8 +83,6 @@ export default function App() {
     if (!userState.user) return;
     e.preventDefault();
 
-
-
     if (userPicks.pickSaved) {
       console.log('Pick already saved');
     } else {
@@ -104,6 +102,7 @@ export default function App() {
   return (
     <>
       <Header user={userState.user} />
+      {/* <Route  component={Groups} /> */}
       <div>
         {
           userState.user ?
