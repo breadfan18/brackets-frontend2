@@ -151,7 +151,10 @@ export default function App() {
               </Switch>
             </>
             :
-            <article>Not logged in</article>
+            <>
+              <article>Welcome to Soccer Brackets.</article>
+              <article>Log in to Continue</article>
+            </>
         }
       </div>
     </>
