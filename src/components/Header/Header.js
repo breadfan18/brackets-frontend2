@@ -12,7 +12,7 @@ const Header = (props) => {
                         props.user ?
                             <>
                                 <li>
-                                    <Link to="/home">Home</Link>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li>
                                     <Link to="/groups">Groups</Link>
