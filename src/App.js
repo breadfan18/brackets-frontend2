@@ -104,12 +104,14 @@ export default function App() {
         {
           userState.user ?
             <>
-              <article>Welcome {userState.user.displayName}!!</article>
               <Switch>
                 <Route
                   exact path='/'
                   render={() =>
-                    <div>HOME PAGE</div>
+                    <>
+                      <article>Welcome {userState.user.displayName}!!</article>
+                      <div>HOME PAGE</div>
+                    </>
                   }
                 />
                 <Route
@@ -152,10 +154,6 @@ export default function App() {
             <article>Not logged in</article>
         }
       </div>
-
-
-
-
     </>
   );
 }
