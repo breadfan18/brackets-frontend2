@@ -118,7 +118,7 @@ export default function App() {
                 <Route
                   exact path='/groups'
                   render={() =>
-                    <>
+                    <div className='groupsCardsPage'>
                       <Groups
                         groups={groups}
                         saveGroupPicks={handlePicksSave}
@@ -126,7 +126,7 @@ export default function App() {
                       <div id='submitGrpPicks'>
                         <button class="btn waves-effect waves-light" type="submit" onClick={handleSubmit}>Submit Picks</button>
                       </div>
-                    </>
+                    </div>
                   }
                 />
                 <Route

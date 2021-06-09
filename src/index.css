@@ -14,7 +14,8 @@ code {
 
 :root {
   --color-main: #5f9ea0;
-  --color-secondary: #000000;
+  --black-low-opacity: rgba(0,0,0,0.4);
+  --buttons-nav-color: rgba(98,158,160,0.8);
   /* --bkgrd-img: url('https://i.imgur.com/PUfncen.jpg'); */
   --bkgrd-img: url('https://wallpapercave.com/wp/wp3671193.jpg');
 }
@@ -35,10 +36,10 @@ body {
   padding: 10px;
 }
 
-.responsive-table {
+.striped {
   padding: 20px;
   max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255,255,255,0.5);
   border-radius: 15px;
   color: black;
 }
@@ -46,3 +47,4 @@ body {
 .responsive-table > tbody > tr:nth-child(odd){
   background-color: rgba(228, 228, 228, 0.2);
 }
+

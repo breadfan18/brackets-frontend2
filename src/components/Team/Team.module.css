@@ -3,12 +3,13 @@
     justify-content: space-between;
     padding: 0 1.5rem 0 1rem;
     cursor: grab;
+    border: 2px solid rgb(133, 126, 126);
 }
 
-.eachTeam:not(div.eachTeam:last-child) {
+/* .eachTeam:not(div.eachTeam:last-child) {
     border: 1px solid rgba(255,255,255,0.3);
-}
+} */
 
-.eachTeam:focus{
+/* .eachTeam:focus{
     color: white;
-}
+} */

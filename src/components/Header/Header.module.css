@@ -16,7 +16,7 @@ h1 {
 }
 
 .mainNav {
-    background-color:rgba(98,158,160,0.8);
+    background-color: var(--buttons-nav-color);
     font-weight: bold;
 }
 
