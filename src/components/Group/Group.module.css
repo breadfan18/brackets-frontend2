@@ -1,3 +1,5 @@
+@import '../../index.css';
+
 .groupCard {
     border: 1px solid black;
     display: flex;
@@ -6,12 +8,24 @@
     margin: 10px;
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    color: white;
+    font-size: 1rem;
 }
 
 .groupName{
-    background-color: black;
+    background-color: var(--color-secondary);
     color: white;
     font-size: 1.5rem;
     border-top-left-radius: 30px;
     padding: 10px 0 10px 20px;
 }
+
+button {
+    background-color: var(--color-main);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+}
+

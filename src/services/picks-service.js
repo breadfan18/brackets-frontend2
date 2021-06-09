@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/api/picks';
+const BASE_URL = 'https://brackets-backend.herokuapp.com/api/picks';
 
 function fetchUserPicks(uid) {
     return fetch(`${BASE_URL}?uid=${uid}`).then(res => res.json());

@@ -126,6 +126,15 @@ export default function App() {
                     </>
                   }
                 />
+                 <Route
+                  exact path='/knockouts'
+                  render={() =>
+                    <>
+                      <article>Welcome {userState.user.displayName}!!</article>
+                      <div>HOME PAGE</div>
+                    </>
+                  }
+                />
                 <Route
                   exact path='/currentPicks'
                   render={() =>

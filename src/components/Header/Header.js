@@ -15,7 +15,10 @@ const Header = (props) => {
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="/groups">Groups</Link>
+                                    <Link to="/groups">Groups Stages</Link>
+                                </li>
+                                <li>
+                                    <Link to="/knockouts">Knockout Stages</Link>
                                 </li>
                                 <li>
                                     <Link to="/currentPicks">Current Picks</Link>
@@ -26,16 +29,18 @@ const Header = (props) => {
                                 <li>
                                     <Link to="/simulate">Simulate</Link>
                                 </li>
-                                <li>
-                                    <img
-                                        style={{height: '2.5rem', borderRadius: '50%'}}
-                                        src={props.user.photoURL}
-                                        alt={props.user.displayName} />
+                                <li className='userInfo'>
+                                    <li>
+                                        <img
+                                            style={{ height: '2.5rem', borderRadius: '50%' }}
+                                            src={props.user.photoURL}
+                                            alt={props.user.displayName} />
+                                    </li>
+                                    <li
+                                        className={styles.navLink}
+                                        onClick={logout}
+                                    >Logout</li>
                                 </li>
-                                <li
-                                    className={styles.navLink}
-                                    onClick={logout}
-                                >Logout</li>
                             </>
                             :
                             <li
