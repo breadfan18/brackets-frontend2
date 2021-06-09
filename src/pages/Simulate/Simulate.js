@@ -2,7 +2,8 @@ import styles from './Simulate.module.css';
 
 const Simulate = (props) => {
     return (
-        <div>SIMULATE PAGE</div>
+        <div>SIMULATE PAGE <span>TEST</span></div>
+
     )
 }
 
