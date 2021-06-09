@@ -14,7 +14,7 @@ const CurrentPicks = (props) => {
 
 
     return (
-        <div>
+        <div className='currentPicks'>
             <section className='groupStagePicks'>
                 <h4>Group Stage Picks</h4>
                 <table className='responsive-table striped'>

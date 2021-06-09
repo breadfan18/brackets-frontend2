@@ -1,5 +1,6 @@
 .groupsContainer {
     display: flex;
     flex-wrap: wrap;
-    background: url('https://i.imgur.com/PUfncen.jpg');
+    align-items: center;
+    justify-content: center;
 }

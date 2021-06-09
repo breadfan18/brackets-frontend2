@@ -15,9 +15,26 @@ code {
 :root {
   --color-main: #5f9ea0;
   --color-secondary: #000000;
-  --bkgrd-img: url('https://i.imgur.com/PUfncen.jpg');
+  /* --bkgrd-img: url('https://i.imgur.com/PUfncen.jpg'); */
+  --bkgrd-img: url('https://wallpapercave.com/wp/wp2624824.jpg');
 }
 
 body {
   background: var(--bkgrd-img);
+  background-size: cover;
+}
+
+#submitGrpPicks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submitGrpPicks > button {
+  font-size: 3rem;
+  padding: 10px;
+}
+
+.currentPicks {
+  color: white;
 }

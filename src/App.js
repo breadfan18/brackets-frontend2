@@ -122,11 +122,13 @@ export default function App() {
                         groups={groups}
                         saveGroupPicks={handlePicksSave}
                       />
-                      <button class="btn waves-effect waves-light" type="submit" onClick={handleSubmit}>Submit Picks</button>
+                      <div id='submitGrpPicks'>
+                        <button class="btn waves-effect waves-light" type="submit" onClick={handleSubmit}>Submit Picks</button>
+                      </div>
                     </>
                   }
                 />
-                 <Route
+                <Route
                   exact path='/knockouts'
                   render={() =>
                     <>

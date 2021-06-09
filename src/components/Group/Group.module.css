@@ -1,7 +1,7 @@
 @import '../../index.css';
 
 .groupCard {
-    border: 1px solid black;
+    border: 1px solid rgba(255,255,255,0.3);
     display: flex;
     flex-direction: column;
     min-width: 400px;
@@ -9,11 +9,13 @@
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
 }
 
 .groupName{
-    background-color: var(--color-secondary);
+    background-color: rgba(0,0,0,0.8);
     color: white;
     font-size: 1.5rem;
     border-top-left-radius: 30px;
