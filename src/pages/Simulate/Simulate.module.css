@@ -1,0 +1,14 @@
+@import '../../index.css';
+
+.simulateContainer {
+    color: white;
+    background-color: var(--black-low-opacity);
+}
+
+h4 {
+    margin-top: 0;
+}
+
+.simButton {
+    border: 2px solid black;
+}

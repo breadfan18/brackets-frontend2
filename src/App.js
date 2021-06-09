@@ -6,6 +6,8 @@ import { getGroups } from './services/soccer-api';
 import { createPicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
+import Simulate from './pages/Simulate/Simulate';
+
 import { Route, Switch } from 'react-router-dom';
 
 export default function App() {
@@ -157,7 +159,7 @@ export default function App() {
                 <Route
                   exact path='/simulate'
                   render={() =>
-                    <div>SIMULATE</div>
+                    <Simulate />
                   }
                 />
               </Switch>

@@ -21,7 +21,7 @@
     padding: 10px 0 10px 20px;
 }
 
-button {
+.groupCard > button {
     background-color: var(--buttons-nav-color);
     color: white;
     font-weight: bold;
