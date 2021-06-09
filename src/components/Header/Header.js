@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <header className={styles.header}>
             <h1>Soccer Brackets</h1>
-            <nav>
+            <nav className={styles.mainNav}>
                 <ul>
                     {
                         props.user ?

@@ -16,7 +16,7 @@ const CurrentPicks = (props) => {
     return (
         <div>
             <section className='groupStagePicks'>
-                <h3>Group Stage Picks</h3>
+                <h4>Group Stage Picks</h4>
                 <table className='responsive-table striped'>
                     <thead>
                         <th>Group</th>
@@ -54,8 +54,9 @@ const CurrentPicks = (props) => {
                 <i class="material-icons right">delete_forever</i>
                 </button>
             </section>
+            <hr />
             <section>
-                <h3>Round of 16 Picks</h3>
+                <h4>Round of 16 Picks</h4>
                 <table>
                     <thead>
                         <th>Game 1</th>
@@ -72,8 +73,9 @@ const CurrentPicks = (props) => {
                     </tbody>
                 </table>
             </section>
+            <hr />
             <section>
-                <h3>Quarter Finals Picks</h3>
+                <h4>Quarter Finals Picks</h4>
                 <table>
                     <thead>
                         <th>Game 1</th>
@@ -86,8 +88,9 @@ const CurrentPicks = (props) => {
                     </tbody>
                 </table>
             </section>
+            <hr />
             <section>
-                <h3>Semi Finals Picks</h3>
+                <h4>Semi Finals Picks</h4>
                 <table>
                     <thead>
                         <th>Game 1</th>
@@ -98,8 +101,9 @@ const CurrentPicks = (props) => {
                     </tbody>
                 </table>
             </section>
+            <hr />
             <section>
-                <h3>Final Pick</h3>
+                <h4>Final Pick</h4>
             </section>
 
         </div>

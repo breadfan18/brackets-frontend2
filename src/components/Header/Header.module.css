@@ -1,4 +1,24 @@
 /* .header {
+    background-color: black;
+    color: white;
+    margin-top: 0;
+} */
+
+h1 {
+    background-color: black;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainNav {
+    background-color:cadetblue;
+    font-weight: bold;
+}
+
+/* .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
