@@ -3,12 +3,12 @@ import 'firebase/auth';
 
 const config = {
     //Todo: add project details here
-    apiKey: "AIzaSyA49lgnRIeOe08V-r2RZB-x-Wb41sh6-PA",
-    authDomain: "react-dev-skills-1d532.firebaseapp.com",
-    projectId: "react-dev-skills-1d532",
-    storageBucket: "react-dev-skills-1d532.appspot.com",
-    messagingSenderId: "360515302015",
-    appId: "1:360515302015:web:27ddda6466355e3fe7c54a"
+    apiKey: "AIzaSyDZqCQLHd6-0NVU4bIcIJpNXUUrwzvSYWw",
+    authDomain: "soccer-brackets.firebaseapp.com",
+    projectId: "soccer-brackets",
+    storageBucket: "soccer-brackets.appspot.com",
+    messagingSenderId: "252887233677",
+    appId: "1:252887233677:web:94311e5fd1411469b11ec4"
 }
 
 firebase.initializeApp(config);
