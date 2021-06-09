@@ -14,9 +14,10 @@ const CurrentPicks = (props) => {
 
 
     return (
-
         <div>
-            <table>
+            <section className='groupStagePicks'>
+                <h3>Group Stage Picks</h3>
+                <table>
                 <thead>
                     <th>Group</th>
                     <th>First</th>
@@ -29,6 +30,7 @@ const CurrentPicks = (props) => {
                 groupsArray.map((groups, idx) => (
                     <>
                         
+    
                         <tr>
                         <td>Group {groupLetters[idx]}</td>
                             {
@@ -41,13 +43,24 @@ const CurrentPicks = (props) => {
 
                         </tr>
                     </>
-
-
                 ))
             }
                 </tbody>
 
             </table>
+            </section>
+            <section>
+                <h3>Round of 16 Picks</h3>
+            </section>
+            <section>
+                <h3>Quarter Finals Picks</h3>
+            </section>
+            <section>
+                <h3>Semi Finals Picks</h3>
+            </section>
+            <section>
+                <h3>Final Pick</h3>
+            </section>
             
         </div>
     )
