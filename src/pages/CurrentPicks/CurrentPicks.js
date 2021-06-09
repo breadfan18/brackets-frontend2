@@ -16,25 +16,39 @@ const CurrentPicks = (props) => {
     return (
 
         <div>
-            {
+            <table>
+                <thead>
+                    <th>Group</th>
+                    <th>First</th>
+                    <th>Second</th>
+                    <th>Third</th>
+                    <th>Fourth</th>
+                </thead>
+                <tbody>
+                {
                 groupsArray.map((groups, idx) => (
                     <>
-                        <div>Group {groupLetters[idx]}</div>
-                        <ul>
+                        
+                        <tr>
+                        <td>Group {groupLetters[idx]}</td>
                             {
                                 groups.map((team,teamIdx) => 
-                                    <li>
-                                        <p>{teamIdx+1}<span>    {team.name}</span></p>
-                                    </li>
+                                    <td>
+                                        {team.name}
+                                    </td>
                                 )
                             }
 
-                        </ul>
+                        </tr>
                     </>
 
 
                 ))
             }
+                </tbody>
+
+            </table>
+            
         </div>
     )
 
