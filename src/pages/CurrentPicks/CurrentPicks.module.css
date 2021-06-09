@@ -1,0 +1,27 @@
+.currentPicks {
+    margin-top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+}
+
+#editDeleteButtons {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+#editDeleteButtons>button:first-child {
+    margin-right: 30px;
+}
+
+#groupStagePicksh4 {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.groupStagePicks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -70,6 +70,7 @@ export default function App() {
   //handleSubmit Function
   function handlePicksSave(teams, e, groupLetterKey) {
     if (!userState.user) return;
+    e.preventDefault();
 
     setUserPicks({
       allPicks: userPicks.allPicks,

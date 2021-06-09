@@ -1,3 +1,5 @@
+import styles from './CurrentPicks.module.css';
+
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0][0];
     let groupsArray = [];
@@ -12,11 +14,12 @@ const CurrentPicks = (props) => {
         }
     }
 
+    console.log(props.allPicks);
 
     return (
-        <div className='currentPicks'>
-            <section className='groupStagePicks'>
-                <h4>Group Stage Picks</h4>
+        <div className={styles.currentPicks}>
+            <section className={styles.groupStagePicks}>
+                <h4 id={styles.groupStagePicksh4}>Group Stage Picks</h4>
                 <table className='responsive-table striped'>
                     <thead>
                         <th>Group</th>
@@ -29,9 +32,7 @@ const CurrentPicks = (props) => {
                         {
                             groupsArray.map((groups, idx) => (
                                 <>
-
-
-                                    <tr>
+                                    <tr style={{lineHeight: '8px'}}>
                                         <td>Group {groupLetters[idx]}</td>
                                         {
                                             groups.map((team, teamIdx) =>
@@ -47,12 +48,14 @@ const CurrentPicks = (props) => {
                         }
                     </tbody>
                 </table>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Edit Picks
-                <i class="material-icons right">edit</i>
-                </button>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Delete Picks
-                <i class="material-icons right">delete_forever</i>
-                </button>
+                <div id={styles.editDeleteButtons}>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Edit Picks
+                    <i class="material-icons right">edit</i>
+                    </button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Delete Picks
+                    <i class="material-icons right">delete_forever</i>
+                    </button>
+                </div>
             </section>
             <hr />
             <section>
