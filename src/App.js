@@ -3,6 +3,7 @@ import { auth } from './services/firebase';
 import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
+import { fetchResults } from './services/results-service';
 import { createPicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
@@ -72,6 +73,11 @@ export default function App() {
     }
 
     getAppData();
+
+    fetchResults()
+    .then(results => {
+      setGroupStandings(results);
+    })
 
     // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
