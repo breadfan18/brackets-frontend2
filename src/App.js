@@ -64,14 +64,13 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
       const picks = await fetchUserPicks(userState.user.uid);
-      // console.log(picks);
+      console.log(picks);
 
       setUserPicks({
-        allPicks: [...userPicks.allPicks, picks],
-        picks: { ...userPicks.picks }
+        allPicks: picks,
       })
+ 
     }
-
     getAppData();
 
     fetchResults()
@@ -120,6 +119,11 @@ export default function App() {
     }
   }
 
+  function handlePointsCalc() {
+    console.log(userPicks.allPicks);
+  }
+
+  handlePointsCalc();
 
   return (
     <>

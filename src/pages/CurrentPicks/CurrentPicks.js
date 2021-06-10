@@ -14,8 +14,6 @@ const CurrentPicks = (props) => {
         }
     }
 
-    console.log(props.allPicks);
-
     return (
         <div className={styles.currentPicks}>
             <section className={styles.groupStagePicks}>
