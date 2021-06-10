@@ -177,6 +177,7 @@ export default function App() {
                     <Simulate 
                       userPick={userPicks.allPicks}
                       setStandings={setGroupStandings}
+                      groupStandings={groupStandings}
                     />
                   }
                 />

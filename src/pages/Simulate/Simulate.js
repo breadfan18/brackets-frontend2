@@ -6,19 +6,38 @@ const Simulate = (props) => {
     function groupStandings() {
         getGroupsResults()
         .then(results => {
-            // props.setStandings(results.groups);
 
-            results.groups.map(group => 
-                console.log(group.standings)    
-            )
+
+            //need to iterate here, and add an array of the 4 teams to the group letter key using the handleSetResults
+            //function
+            results.groups.map(group => {
+                let groupLetter = group.name;
+                let teamsArr = [];
+
+                console.log(groupLetter);
+                group.standings.map(team => teamsArr.push(team.team.name))
+
+                console.log(teamsArr);
+
+                handleSetResults(groupLetter, teamsArr)
+            })
+            
             
         })
     }
 
+    
+
     function handleSetResults(groupLetterKey, teams) {
-           props.setStandings({
-               [groupLetterKey]: teams
-           })
+           props.setStandings(prevState => (
+               {
+                ...prevState,
+                [groupLetterKey]: teams
+               }
+           )
+           
+
+           )
     }
 
     return (
