@@ -120,10 +120,9 @@ export default function App() {
   }
 
   function handlePointsCalc() {
-    console.log(userPicks.allPicks);
+    
   }
 
-  handlePointsCalc();
 
   return (
     <>
