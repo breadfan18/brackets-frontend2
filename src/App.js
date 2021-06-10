@@ -64,11 +64,11 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
       const picks = await fetchUserPicks(userState.user.uid);
-      console.log(picks);
 
       setUserPicks({
-        allPicks: picks,
+        allPicks: [picks],
       })
+
  
     }
     getAppData();

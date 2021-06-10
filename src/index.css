@@ -23,6 +23,7 @@ code {
 body {
   background: var(--bkgrd-img);
   background-size: cover;
+  color: white;
 }
 
 #submitGrpPicks {
