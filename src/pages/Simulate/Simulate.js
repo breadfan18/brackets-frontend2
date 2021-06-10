@@ -26,12 +26,6 @@ const Simulate = (props) => {
            ))
     }
 
-    // async function commitResults() {
-    //     await createResults(props.groupStandings);
-    // }
-
-
-
     return (
         <div className={styles.simulateContainer}>
             <section>
