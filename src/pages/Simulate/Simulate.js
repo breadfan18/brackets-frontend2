@@ -1,12 +1,31 @@
 import styles from './Simulate.module.css';
-import {useEffect} from 'react';
+import { getGroupsResults } from '../../services/soccer-api';
 
 const Simulate = (props) => {
+
+    function groupStandings() {
+        getGroupsResults()
+        .then(results => {
+            // props.setStandings(results.groups);
+
+            results.groups.map(group => 
+                console.log(group.standings)    
+            )
+            
+        })
+    }
+
+    function handleSetResults(groupLetterKey, teams) {
+           props.setStandings({
+               [groupLetterKey]: teams
+           })
+    }
+
     return (
         <div className={styles.simulateContainer}>
             <section>
                 <h4>Group Stage</h4>
-                <button className={styles.simButton}>Simulate</button>
+                <button onClick={() => groupStandings()} className={styles.simButton}>Simulate</button>
             </section>
             <hr />
             <section>

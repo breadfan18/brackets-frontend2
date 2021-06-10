@@ -34,6 +34,21 @@ export default function App() {
     pickSaved: false
   })
 
+  const [groupStandings, setGroupStandings] = useState({
+    'Group A': [],
+    'Group B': [],
+    'Group C': [],
+    'Group D': [],
+    'Group E': [],
+    'Group F': [],
+    'Group G': [],
+    'Group H': [],
+    roundOf16Results: {},
+    quartersResults: {},
+    semisResults: {},
+    finalResult: String,
+});
+
   const [userState, setUserState] = useState({
     user: null
   });
@@ -159,7 +174,10 @@ export default function App() {
                 <Route
                   exact path='/simulate'
                   render={() =>
-                    <Simulate />
+                    <Simulate 
+                      userPick={userPicks.allPicks}
+                      setStandings={setGroupStandings}
+                    />
                   }
                 />
               </Switch>
