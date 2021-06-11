@@ -5,9 +5,9 @@ import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import { fetchResults } from './services/results-service';
 import { createPicks, fetchUserPicks } from './services/picks-service';
-import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
+import "./App.css";
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -41,20 +41,7 @@ export default function App() {
     pickSaved: false
   })
 
-  const [groupStandings, setGroupStandings] = useState({
-    'Group A': [],
-    'Group B': [],
-    'Group C': [],
-    'Group D': [],
-    'Group E': [],
-    'Group F': [],
-    'Group G': [],
-    'Group H': [],
-    roundOf16Results: {},
-    quartersResults: {},
-    semisResults: {},
-    finalResult: String,
-});
+  const [results, setResults] = useState({});
 
   const [userState, setUserState] = useState({
     user: null
@@ -81,7 +68,7 @@ export default function App() {
 
     fetchResults()
     .then(results => {
-      setGroupStandings(results);
+      setResults(results);
     })
 
     // Set up authentication observer
@@ -126,28 +113,46 @@ export default function App() {
   }
 
   function handlePointsCalc() {
-    let userPicksFinalObj = [];
-    let resultsFinalObj = groupStandings[0];
+    let userPicksFinalObj = {};
+    let resultsFinalObj = results[0];
     let streamlinedUserPicks = userPicks.allPicks[0][0];
 
-    let counter1 = 0;
+    let counter = 0;
     for (const group in streamlinedUserPicks) {
       let teamsShortArr = [];
-      if (Object.hasOwnProperty.call(streamlinedUserPicks, group) && counter1 < 8) {
+      if (Object.hasOwnProperty.call(streamlinedUserPicks, group) && counter < 8) {
         const teamsFullArr = streamlinedUserPicks[group];
         teamsFullArr.map(team => teamsShortArr.push(team.name));
         userPicksFinalObj[group] = teamsShortArr;
-        counter1++;
+        counter++;
       }
     }
 
-    console.log('Results: ', resultsFinalObj);
-    console.log('Picksss: ', userPicksFinalObj);
+    const userPicksFinalArr = [];
+    const resultsFinalArr = [];
+
+    for (const arr in userPicksFinalObj) {
+      userPicksFinalObj[arr].forEach(pick => {
+        // console.log(pick);
+         userPicksFinalArr.push(pick);
+      });
+   }
+   
+  //  for (const arr in resultsFinalObj) {
+  //     resultsFinalObj[arr].forEach(correct => {
+  //        resultsFinalArr.push(correct);
+  //     });
+  //  }
+
+    // console.log('Results: ', resultsFinalObj);
+    // console.log('Picksss: ', userPicksFinalObj);
     
+    console.log(userPicksFinalObj);
+    // console.log(resultsFinalObj);
 
   }
 
-  handlePointsCalc();
+  // handlePointsCalc();
 
 
   return (
@@ -211,8 +216,8 @@ export default function App() {
                   render={() =>
                     <Simulate 
                       userPick={userPicks.allPicks}
-                      setStandings={setGroupStandings}
-                      groupStandings={groupStandings}
+                      setStandings={setResults}
+                      groupStandings={results}
                     />
                   }
                 />
