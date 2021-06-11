@@ -29,7 +29,7 @@ export default function App() {
       quartersPicks: {},
       semisPicks: {},
       finalPick: String,
-      totalPoints: Number,
+      totalPoints: {},
       uid: String
     },
     pickSaved: false
@@ -120,8 +120,25 @@ export default function App() {
   }
 
   function handlePointsCalc() {
-    
+    let userPicksFinalObj = {};
+    let counter = 0;
+    let streamlinedUserPicks = userPicks.allPicks[0][0];
+
+    for (const group in streamlinedUserPicks) {
+      let teamsShortArr = [];
+      if (Object.hasOwnProperty.call(streamlinedUserPicks, group) && counter < 8) {
+        const teamsFullArr = streamlinedUserPicks[group];
+        teamsFullArr.map(team => teamsShortArr.push(team.name));
+        userPicksFinalObj[group] = teamsShortArr;
+        counter++;
+      }
+    }
+
+    console.log('Picksss', userPicksFinalObj);
+    console.log('Results', groupStandings[0]);
   }
+
+  handlePointsCalc();
 
 
   return (
