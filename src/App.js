@@ -8,10 +8,12 @@ import { createPicks, fetchUserPicks } from './services/picks-service';
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
+import Leaderboard from './pages/Leaderboard/Leaderboard';
 
 import { Route, Switch } from 'react-router-dom';
 
 export default function App() {
+  const pointPerCorrectGroupPosition = 8;
   const [groups, setGroups] = useState([]);
 
   const [userPicks, setUserPicks] = useState({
@@ -28,10 +30,10 @@ export default function App() {
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},
-      finalPick: String,
-      totalPoints: Number,
-      uid: String
+      finalPick: String
     },
+    totalPoints: Number,
+    uid: String,
     pickSaved: false
   })
 
@@ -48,7 +50,7 @@ export default function App() {
     quartersResults: {},
     semisResults: {},
     finalResult: String,
-});
+  });
 
   const [userState, setUserState] = useState({
     user: null
@@ -68,14 +70,14 @@ export default function App() {
       setUserPicks({
         allPicks: picks,
       })
- 
+
     }
     getAppData();
 
     fetchResults()
-    .then(results => {
-      setResults(results);
-    })
+      .then(results => {
+        setResults(results);
+      })
 
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
@@ -116,10 +118,45 @@ export default function App() {
   }
 
   function handlePointsCalc() {
-    console.log(userPicks.allPicks);
-    console.log(results);
+    const userPicksObj = userPicks.allPicks[0];
+    const resultsObj = results[0];
+    const userPicksArr = [];
+    const resultsArr = [];
+
+    let counter1 = 0;
+    for (const arr in userPicksObj) {
+      if (counter1 < 8) {
+        userPicksObj[arr].forEach(team => {
+          userPicksArr.push(team);
+        });
+      }
+      counter1++;
+    }
+
+    let counter2 = 0;
+    for (const arr in resultsObj) {
+      if (counter2 < 8) {
+        resultsObj[arr].forEach(team => {
+          resultsArr.push(team);
+        });
+      }
+      counter2++;
+    }
+    handleGroupPointsCompare(userPicksArr, resultsArr);
   }
 
+  function handleGroupPointsCompare(userPicks, resultsArr) {
+    let correntCount = 0;
+    let incorrectCount = 0;
+    for (let i = 0; i < userPicks.length; i++) {
+      if (userPicks[i] !== resultsArr[i]) {
+        incorrectCount++
+      } else {
+        correntCount++;
+      }
+    }
+    return correntCount * pointPerCorrectGroupPosition;
+  }
 
   return (
     <>
@@ -173,14 +210,16 @@ export default function App() {
                 <Route
                   exact path='/leaderboard'
                   render={() =>
-                    <div>LEADER BOARD</div>
+                    <Leaderboard 
+                      
+                    />
                   }
                 />
 
                 <Route
                   exact path='/simulate'
                   render={() =>
-                    <Simulate 
+                    <Simulate
                       userPick={userPicks.allPicks}
                       setStandings={setResults}
                       groupStandings={results}
