@@ -2,9 +2,6 @@ import styles from './CurrentPicks.module.css';
 
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];
-
-    console.log(userPicks);
-
     let groupsArray = [];
     let counter = 0;
     let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -16,8 +13,6 @@ const CurrentPicks = (props) => {
             counter++;
         }
     }
-
-    console.log(groupsArray);
 
     return (
         <div className={styles.currentPicks}>

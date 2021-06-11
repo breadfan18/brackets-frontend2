@@ -17,15 +17,14 @@ export default function App() {
   const [userPicks, setUserPicks] = useState({
     allPicks: [],
     picks: {
-      // 'Group A': [],
-      // 'Group B': [],
-      // 'Group C': [],
-      // 'Group D': [],
-      // 'Group E': [],
-      // 'Group F': [],
-      // 'Group G': [],
-      // 'Group H': [],
-      groupStagePicks: [],
+      'Group A': [],
+      'Group B': [],
+      'Group C': [],
+      'Group D': [],
+      'Group E': [],
+      'Group F': [],
+      'Group G': [],
+      'Group H': [],
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},
@@ -36,7 +35,7 @@ export default function App() {
     pickSaved: false
   })
 
-  const [groupStandings, setGroupStandings] = useState({
+  const [results, setResults] = useState({
     'Group A': [],
     'Group B': [],
     'Group C': [],
@@ -75,7 +74,7 @@ export default function App() {
 
     fetchResults()
     .then(results => {
-      setGroupStandings(results);
+      setResults(results);
     })
 
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
@@ -114,6 +113,11 @@ export default function App() {
       }
       )
     }
+  }
+
+  function handlePointsCalc() {
+    console.log(userPicks.allPicks);
+    console.log(results);
   }
 
 
@@ -178,8 +182,8 @@ export default function App() {
                   render={() =>
                     <Simulate 
                       userPick={userPicks.allPicks}
-                      setStandings={setGroupStandings}
-                      groupStandings={groupStandings}
+                      setStandings={setResults}
+                      groupStandings={results}
                     />
                   }
                 />
