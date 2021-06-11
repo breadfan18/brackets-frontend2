@@ -3,6 +3,8 @@ import styles from './CurrentPicks.module.css';
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];
 
+    console.log(userPicks);
+
     let groupsArray = [];
     let counter = 0;
     let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -14,6 +16,8 @@ const CurrentPicks = (props) => {
             counter++;
         }
     }
+
+    console.log(groupsArray);
 
     return (
         <div className={styles.currentPicks}>
@@ -32,15 +36,14 @@ const CurrentPicks = (props) => {
                             groupsArray.map((groups, idx) => (
                                 <>
                                     <tr style={{lineHeight: '8px'}}>
-                                        <td>Group {groupLetters[idx]}</td>
+                                        <td  style={{fontWeight: 'bold'}}>Group {groupLetters[idx]}</td>
                                         {
                                             groups.map((team, teamIdx) =>
                                                 <td>
-                                                    {team.name}
+                                                    {team}
                                                 </td>
                                             )
                                         }
-
                                     </tr>
                                 </>
                             ))
