@@ -2,6 +2,8 @@ import styles from './CurrentPicks.module.css';
 
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];
+
+    console.log(userPicks);
     let groupsArray = [];
     let counter = 0;
     let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -18,13 +20,13 @@ const CurrentPicks = (props) => {
         <div className={styles.currentPicks}>
             <section className={styles.groupStagePicks}>
                 <h4 id={styles.groupStagePicksh4}>Group Stage Picks</h4>
-                <table className='striped'>
+                <table className='striped centered'>
                     <thead>
-                        <th>Group</th>
+                      <tr>  <th>Group</th>
                         <th>First</th>
                         <th>Second</th>
                         <th>Third</th>
-                        <th>Fourth</th>
+                        <th>Fourth</th></tr>
                     </thead>
                     <tbody>
                         {

@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import { fetchResults } from './services/results-service';
-import { createPicks, fetchUserPicks } from './services/picks-service';
+import { createPicks, fetchUserPicks, updatePicks } from './services/picks-service';
 import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
@@ -18,22 +18,6 @@ export default function App() {
 
   const [userPicks, setUserPicks] = useState({
     allPicks: [],
-    picks: {
-      'Group A': [],
-      'Group B': [],
-      'Group C': [],
-      'Group D': [],
-      'Group E': [],
-      'Group F': [],
-      'Group G': [],
-      'Group H': [],
-      roundOf16Picks: {},
-      quartersPicks: {},
-      semisPicks: {},
-      finalPick: String
-    },
-    totalPoints: Number,
-    uid: String,
     pickSaved: false
   })
 
@@ -117,6 +101,16 @@ export default function App() {
     }
   }
 
+  function handleUpdate() {
+    if (!userState.user) return;
+
+
+    const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
+
+    updatePicks(pickToUpdate, pickToUpdate._id);
+  }
+
+
   function handlePointsCalc() {
     const userPicksObj = userPicks.allPicks[0];
     const resultsObj = results[0];
@@ -142,7 +136,16 @@ export default function App() {
       }
       counter2++;
     }
-    handleGroupPointsCompare(userPicksArr, resultsArr);
+    console.log(handleGroupPointsCompare(userPicksArr, resultsArr));
+
+    setUserPicks(prevState => ({
+      allPicks: userPicks.allPicks,
+      picks: {
+        ...userPicks.allPicks,
+        totalPoints: handleGroupPointsCompare(userPicksArr, resultsArr)
+      }
+        
+    }));
   }
 
   function handleGroupPointsCompare(userPicks, resultsArr) {
@@ -172,6 +175,10 @@ export default function App() {
                     <>
                       <article>Welcome {userState.user.displayName}!!</article>
                       <div>HOME PAGE</div>
+                      <button onClick={() => {
+                        handlePointsCalc()
+                        handleUpdate()
+                      }}>TEST</button>
                     </>
                   }
                 />
@@ -210,8 +217,8 @@ export default function App() {
                 <Route
                   exact path='/leaderboard'
                   render={() =>
-                    <Leaderboard 
-                      
+                    <Leaderboard
+
                     />
                   }
                 />
