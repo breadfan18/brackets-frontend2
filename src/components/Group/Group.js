@@ -25,7 +25,13 @@ const Group = (props) => {
                     ))
                 }
             </SortableTeamsContainer>
-            <button onClick={(e) => props.saveGroupPick(teams, e, props.groupLetter)}>Save</button>
+            <button onClick={(e) => {
+                let teamsArr = [];
+                teams.forEach(team => {
+                    teamsArr.push(team.name);
+                });
+                props.saveGroupPick(teamsArr, e, props.groupLetter)}
+            }>Save</button>
         </article>
     )
 }

@@ -1,10 +1,11 @@
 import styles from './CurrentPicks.module.css';
 
 const CurrentPicks = (props) => {
-    let userPicks = props.allPicks[0][0];
+    let userPicks = props.allPicks[0];
+
     let groupsArray = [];
     let counter = 0;
-    let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+    let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
     for (const group in userPicks) {
         if (Object.hasOwnProperty.call(userPicks, group) && counter < 8) {

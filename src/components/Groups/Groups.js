@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import Group from '../Group/Group';
 import style from './Groups.module.css';
 
 const Groups = (props) => {
-
-    const [finalPicks, setFinalPicks] = useState([]);
 
     return (
         <>
@@ -15,8 +12,6 @@ const Groups = (props) => {
                             group={group.teams}
                             key={group.name}
                             groupLetter={group.name}
-                            finalPicks={finalPicks}
-                            setFinalPicks={setFinalPicks}
                             saveGroupPick={props.saveGroupPicks}
                         />
                     )

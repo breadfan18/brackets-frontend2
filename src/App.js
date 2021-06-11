@@ -17,14 +17,15 @@ export default function App() {
   const [userPicks, setUserPicks] = useState({
     allPicks: [],
     picks: {
-      'Group A': [],
-      'Group B': [],
-      'Group C': [],
-      'Group D': [],
-      'Group E': [],
-      'Group F': [],
-      'Group G': [],
-      'Group H': [],
+      // 'Group A': [],
+      // 'Group B': [],
+      // 'Group C': [],
+      // 'Group D': [],
+      // 'Group E': [],
+      // 'Group F': [],
+      // 'Group G': [],
+      // 'Group H': [],
+      groupStagePicks: [],
       roundOf16Picks: {},
       quartersPicks: {},
       semisPicks: {},
@@ -64,7 +65,6 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
       const picks = await fetchUserPicks(userState.user.uid);
-      console.log(picks);
 
       setUserPicks({
         allPicks: picks,
@@ -78,12 +78,9 @@ export default function App() {
       setGroupStandings(results);
     })
 
-    // Set up authentication observer
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
-    // clean up function
     return function () {
-      // clean up subscriptions
       unsubscribe();
     }
   }, [userState.user]);
@@ -119,11 +116,6 @@ export default function App() {
     }
   }
 
-  function handlePointsCalc() {
-    console.log(userPicks.allPicks);
-  }
-
-  handlePointsCalc();
 
   return (
     <>
