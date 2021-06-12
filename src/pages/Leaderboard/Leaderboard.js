@@ -6,27 +6,29 @@ import testUtils from 'react-dom/test-utils';
 
 const Leaderboard = (props) => {
 
+    let round16Points = 20;
+    let quartersPoints = 40;
+    let semisPoints = 20;
+    let finalsPoints = 15;
+
     const [allUserPicks, setAllUserPicks] = useState({
         allPicks: [],
         totalPoints: 0,
-      })
+    })
 
     useEffect(() => {
 
         async function getAllUserData() {
-            const test = await fetchAllUserPicks();
+            const allUsersData = await fetchAllUserPicks();
 
             setAllUserPicks({
-                allPicks: test,
+                allPicks: allUsersData,
             })
         }
         getAllUserData();
     }, [])
 
     const allPicksArr = allUserPicks.allPicks;
-    console.log(allPicksArr);
-
-   allPicksArr.map(user => console.log(user.uid));
 
     return (
 
@@ -51,14 +53,14 @@ const Leaderboard = (props) => {
                             <tr>
                                 <td>{user.uid}</td>
                                 <td>{user.totalPoints}</td>
-                                <td>20</td>
-                                <td>40</td>
-                                <td>20</td>
-                                <td>15</td>
+                                <td>{round16Points}</td>
+                                <td>{quartersPoints}</td>
+                                <td>{semisPoints}</td>
+                                <td>{finalsPoints}</td>
+                                <td id={styles.totalValues}>{user.totalPoints + round16Points + quartersPoints + semisPoints + finalsPoints}</td>
                             </tr>
                         ))
                     }
-                  
                 </tbody>
             </table>
         </div>
