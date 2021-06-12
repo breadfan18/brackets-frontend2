@@ -17,7 +17,6 @@ const Leaderboard = (props) => {
     })
 
     useEffect(() => {
-
         async function getAllUserData() {
             const allUsersData = await fetchAllUserPicks();
 
