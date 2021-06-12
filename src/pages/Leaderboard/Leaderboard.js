@@ -1,6 +1,36 @@
 import styles from './Leaderboard.module.css';
+import { useState, useEffect } from "react";
+import { fetchAllUserPicks } from '../../services/picks-service';
+import testUtils from 'react-dom/test-utils';
+
 
 const Leaderboard = (props) => {
+
+    const [allUserPicks, setAllUserPicks] = useState({
+        allPicks: [],
+        totalPoints: 0,
+      })
+
+    useEffect(() => {
+
+        async function getAllUserData() {
+            const test = await fetchAllUserPicks();
+            console.log(test)
+
+            setAllUserPicks({
+                allPicks: test,
+            })
+    
+        }
+
+       
+
+        getAllUserData();
+
+      
+
+
+    })
 
     return (
         <div className={styles.leaderBoardRoot}>

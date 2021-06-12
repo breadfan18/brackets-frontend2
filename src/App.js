@@ -9,7 +9,6 @@ import "./App.css";
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
-
 import { Route, Switch } from 'react-router-dom';
 
 export default function App() {
@@ -52,12 +51,12 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
 
-      const picks = await fetchUserPicks(userState.user.uid);
+      const userPicks = await fetchUserPicks(userState.user.uid);
 
-      if (picks.length > 0) {
+      if (userPicks.length > 0) {
         setUserPicks({
-          allPicks: picks,
-          totalPoints: picks[0].totalPoints
+          allPicks: userPicks,
+          totalPoints: userPicks[0].totalPoints
         })
       }
     }
@@ -134,11 +133,6 @@ export default function App() {
       }
       counter2++;
     }
-
-    // setUserPicks(prevState => ({
-    //     ...prevState,
-    //     totalPoints: handleGroupPointsCompare(userPicksArr, resultsArr)
-    // }));
 
     let totalPoints = handleGroupPointsCompare(userPicksArr, resultsArr);
 
