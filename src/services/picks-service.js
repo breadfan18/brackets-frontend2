@@ -11,24 +11,24 @@ function fetchAllUserPicks() {
     return fetch(BASE_URL_ALL).then(res => res.json());
 }
 
-function createPicks(data, uid) {
+function createPicks(data, username, totalPoints, uid) {
     return fetch(BASE_URL, {
         method: 'POST',
         headers: {
             'Content-type': 'Application/json'
         },
-        body: JSON.stringify({...data, uid})
+        body: JSON.stringify({...data, username, totalPoints, uid})
     }).then(res => res.json())
 }
 
 
-function updatePicks(data, totalPoints, _id) {
+function updatePicks(data, totalPoints, username, _id) {
     return fetch(`${BASE_URL}/${_id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'Application/json'
         },
-        body: JSON.stringify({data, totalPoints})
+        body: JSON.stringify({data, totalPoints, username})
     }).then(res => res.json())
 }
 

@@ -5,7 +5,6 @@ import testUtils from 'react-dom/test-utils';
 
 
 const Leaderboard = (props) => {
-
     let round16Points = 20;
     let quartersPoints = 40;
     let semisPoints = 20;

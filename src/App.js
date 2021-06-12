@@ -56,6 +56,7 @@ export default function App() {
         setUserPicks({
           allPicks: userPicks,
           totalPoints: userPicks[0].totalPoints,
+          username: userPicks[0].username
         })
       }
     }
@@ -81,8 +82,9 @@ export default function App() {
 
     setUserPicks({
       allPicks: userPicks.allPicks,
-      totalPoints: userPicks.totalPoints,
       pickSaved: userPicks.pickSaved,
+      totalPoints: 0,
+      username: userState.user.displayName,
       picks: {
         ...userPicks.picks,
         [groupLetterKey]: teams
@@ -97,10 +99,11 @@ export default function App() {
     if (userPicks.pickSaved) {
       console.log('Pick already saved');
     } else {
-      const pick = await createPicks(userPicks.picks, userState.user.uid);
+      const pick = await createPicks(userPicks.picks, userState.user.displayName, userPicks.totalPoints, userState.user.uid);
       setUserPicks({
         allPicks: [...userPicks.allPicks, pick],
         totalPoints: userPicks.totalPoints,
+        username: userState.user.displayName,
         pickSaved: true
       }
       )
