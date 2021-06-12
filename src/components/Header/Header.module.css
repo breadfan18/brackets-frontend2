@@ -29,9 +29,11 @@ h1 {
     align-items: center;
     justify-content: flex-end;
     margin-top: 0;
+    margin-bottom: 0;
     font-weight: bold;
 }
 
 .userInfo > * {
     padding: 5px;
+  
 }

@@ -50,10 +50,6 @@ const Header = (props) => {
 
                             </>
                             :
-                            // <li
-                            //     className={styles.navLink}
-                            //     onClick={login}
-                            // >Login</li>
                             <li></li>
                     }
                 </ul>
