@@ -30,34 +30,40 @@ const Simulate = (props) => {
         <div className={styles.simulateContainer}>
             <section>
                 <h4>Group Stage</h4>
-                <button onClick={() => groupStandings()} className={styles.simButton}>Simulate</button>
+                <button onClick={() => groupStandings()} className={styles.simButton}>Simulate Results</button>
                 <button onClick={() => {createResults(props.groupStandings)}} className={styles.simButton}>Commit Results</button>
                 <button onClick={() => {props.calcPoints()}} className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
             <section>
                 <h4>Round of 16</h4>
-                <button className={styles.simButton}>Simulate</button>
+                <button className={styles.simButton}>Simulate Results</button>
+                <button className={styles.simButton}>Commit Results</button>
+                <button className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
             <section>
                 <h4>Quarter Finals</h4>
-                <button className={styles.simButton}>Simulate</button>
+                <button className={styles.simButton}>Simulate Results</button>
+                <button className={styles.simButton}>Commit Results</button>
+                <button className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
             <section>
                 <h4>Semi Finals</h4>
-                <button className={styles.simButton}>Simulate</button>
+                <button className={styles.simButton}>Simulate Results</button>
+                <button className={styles.simButton}>Commit Results</button>
+                <button className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
             <section>
                 <h4>Finals</h4>
-                <button className={styles.simButton}>Simulate</button>
+                <button className={styles.simButton}>Simulate Results</button>
+                <button className={styles.simButton}>Commit Results</button>
+                <button className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
-
         </div>
-
     )
 }
 

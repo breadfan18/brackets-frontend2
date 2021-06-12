@@ -2,7 +2,8 @@
 
 .simulateContainer {
     color: white;
-    background-color: var(--black-low-opacity);
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
 }
 
 h4 {
@@ -11,4 +12,12 @@ h4 {
 
 .simButton {
     border: 2px solid black;
+}
+
+.simulateContainer section {
+    padding: 22px 0 22px 0;
+}
+
+.simulateContainer section > button {
+    margin: 0 5px 0 0;
 }

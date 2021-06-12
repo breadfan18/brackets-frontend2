@@ -3,4 +3,5 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: var(--black-low-opacity);
 }
