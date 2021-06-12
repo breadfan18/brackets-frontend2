@@ -28,6 +28,9 @@
     padding: 5px;
     border-bottom-right-radius: 30px;
     cursor: pointer;
-
 }
 
+.groupCard > button:hover {
+    background-color: rgba(98,158,160,1);
+    border: 2px solid black;
+}
