@@ -15,24 +15,21 @@ const Leaderboard = (props) => {
 
         async function getAllUserData() {
             const test = await fetchAllUserPicks();
-            console.log(test)
 
             setAllUserPicks({
                 allPicks: test,
             })
-    
         }
-
-       
-
         getAllUserData();
+    }, [])
 
-      
+    const allPicksArr = allUserPicks.allPicks;
+    console.log(allPicksArr);
 
-
-    })
+   allPicksArr.map(user => console.log(user.uid));
 
     return (
+
         <div className={styles.leaderBoardRoot}>
             <h4>Leader Board</h4>
             <table className='striped centered'>
@@ -44,10 +41,24 @@ const Leaderboard = (props) => {
                         <th>Quarter Finals</th>
                         <th>Semi Finals</th>
                         <th>Final</th>
+                        <th>TOTAL POINTS</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    {
+                        allPicksArr.map(user => (
+                            <tr>
+                                <td>{user.uid}</td>
+                                <td>{user.totalPoints}</td>
+                                <td>20</td>
+                                <td>40</td>
+                                <td>20</td>
+                                <td>15</td>
+                            </tr>
+                        ))
+                    }
+                  
                 </tbody>
             </table>
         </div>

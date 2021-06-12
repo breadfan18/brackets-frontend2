@@ -1,15 +1,15 @@
+import "./App.css";
 import { useState, useEffect } from "react";
-import { auth } from './services/firebase';
-import Header from './components/Header/Header';
-import Groups from './components/Groups/Groups';
 import { getGroups } from './services/soccer-api';
 import { fetchResults } from './services/results-service';
 import { createPicks, fetchUserPicks, updatePicks } from './services/picks-service';
-import "./App.css";
+import { Route, Switch } from 'react-router-dom';
+import { auth } from './services/firebase';
+import Header from './components/Header/Header';
+import Groups from './components/Groups/Groups';
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
-import { Route, Switch } from 'react-router-dom';
 
 export default function App() {
   const pointPerCorrectGroupPosition = 8;
