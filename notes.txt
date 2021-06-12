@@ -1,0 +1,10 @@
+Order of the presentation:
+
+1. Delete all Results and Picks Data for a user. Leave 3/4 picks data for some users so it shows points in Leaderboard
+2. Login with Firebase
+3. Make group stage picks - open dev drawer and see it being added to state
+4. Submit gruop stage picks
+5. Go to Simulate tab > Simulate Group Results > Commit Group Results
+6. Calculate points
+7. Go to leaderboard
+
