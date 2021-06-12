@@ -17,7 +17,7 @@ const Groups = (props) => {
                     )
                 }
             </div>
-            {/* <button onClick={props.submitPicks}>Submit Picks</button> */}
+            <div className='submitBtnWrapper'><button className="btn waves-effect waves-light submitGrpPicks" type="submit" onClick={(e) => props.handleSubmit(e)}>Submit Picks</button></div>
         </>
     )
 }

@@ -181,10 +181,8 @@ export default function App() {
                       <Groups
                         groups={groups}
                         saveGroupPicks={handlePicksSave}
+                        handleSubmit={handleSubmit}
                       />
-                      <div id='submitGrpPicks'>
-                        <button class="btn waves-effect waves-light" type="submit" onClick={handleSubmit}>Submit Picks</button>
-                      </div>
                     </div>
                   }
                 />

@@ -25,16 +25,23 @@ body {
   background-size: cover;
 }
 
-#submitGrpPicks {
+.submitBtnWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.submitGrpPicks {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 30px;
+  font-size: 2rem;
+  padding: 30px;
+  border: 2px solid black;
+  background-color: var(--buttons-nav-color);
 }
 
-#submitGrpPicks > button {
-  font-size: 3rem;
-  padding: 10px;
-}
 
 .striped {
   padding: 20px;
