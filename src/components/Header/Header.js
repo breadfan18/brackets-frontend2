@@ -1,4 +1,4 @@
-import { login, logout } from '../../services/firebase';
+import { logout } from '../../services/firebase';
 import styles from './Header.module.css'
 import { Link } from 'react-router-dom';
 
@@ -15,10 +15,7 @@ const Header = (props) => {
                                 src={props.user.photoURL}
                                 alt={props.user.displayName} />
                         </li>
-                        <li
-                            className={styles.navLink}
-                            onClick={logout}
-                        >Logout</li>
+                        <li><Link to='/' onClick={logout} id={styles.logout}>Log Out</Link></li>
                     </ul>
                     :
                     <ul className={styles.userInfo}></ul>

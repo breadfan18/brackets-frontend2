@@ -170,7 +170,6 @@ export default function App() {
                     <>
                       <article>Welcome {userState.user.displayName}!!</article>
                       <div>HOME PAGE</div>
-                      <button onClick={() => { handlePointsCalc() }}>TEST</button>
                     </>
                   }
                 />

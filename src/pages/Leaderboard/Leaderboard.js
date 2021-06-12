@@ -1,8 +1,6 @@
 import styles from './Leaderboard.module.css';
 import { useState, useEffect } from "react";
 import { fetchAllUserPicks } from '../../services/picks-service';
-import testUtils from 'react-dom/test-utils';
-
 
 const Leaderboard = (props) => {
     let round16Points = 20;

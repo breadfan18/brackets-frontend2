@@ -21,6 +21,14 @@ h1 {
     cursor: pointer;
 }
 
+#logout {
+    color: white;
+}
+#logout:hover {
+    color: black;
+    border: 2px solid white;
+}
+
 .userInfo {
     background-color: var(--buttons-nav-color);
     margin-right: auto;
