@@ -139,7 +139,7 @@ export default function App() {
 
     let totalPoints = handleGroupPointsCompare(userPicksArr, resultsArr);
     const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
-    
+
     updatePicks(pickToUpdate.totalPoints, userState.user.displayName, totalPoints, pickToUpdate._id);
   }
 
@@ -170,7 +170,7 @@ export default function App() {
                     <>
                       <article>Welcome {userState.user.displayName}!!</article>
                       <div>HOME PAGE</div>
-                      <button onClick={() => {handlePointsCalc()}}>TEST</button>
+                      <button onClick={() => { handlePointsCalc() }}>TEST</button>
                     </>
                   }
                 />
@@ -229,9 +229,7 @@ export default function App() {
               </Switch>
             </>
             :
-            <>
-              <Login />
-            </>
+            <Login />
         }
       </div>
     </>

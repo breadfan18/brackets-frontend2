@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
     return (
         <header className={styles.header}>
+            {
+                props.user ?
+                    <ul className={styles.userInfo}>
+                        <li>{props.user.displayName}</li>
+                        <li>
+                            <img
+                                style={{ height: '2rem', borderRadius: '50%' }}
+                                src={props.user.photoURL}
+                                alt={props.user.displayName} />
+                        </li>
+                        <li
+                            className={styles.navLink}
+                            onClick={logout}
+                        >Logout</li>
+                    </ul>
+                    :
+                    <ul className={styles.userInfo}></ul>
+            }
             <h1>Soccer Brackets</h1>
             <nav className={styles.mainNav}>
                 <ul>
@@ -29,18 +47,7 @@ const Header = (props) => {
                                 <li>
                                     <Link to="/simulate">Simulate</Link>
                                 </li>
-                                <li className='userInfo'>
-                                    <li>
-                                        <img
-                                            style={{ height: '2.5rem', borderRadius: '50%' }}
-                                            src={props.user.photoURL}
-                                            alt={props.user.displayName} />
-                                    </li>
-                                    <li
-                                        className={styles.navLink}
-                                        onClick={logout}
-                                    >Logout</li>
-                                </li>
+
                             </>
                             :
                             // <li

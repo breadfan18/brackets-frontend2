@@ -1,10 +1,8 @@
 @import '../../index.css';
 
-/* .header {
-    background-color: black;
+.header {
     color: white;
-    margin-top: 0;
-} */
+}
 
 h1 {
     background-color: rgba(0,0,0,0.8);
@@ -20,33 +18,20 @@ h1 {
     font-weight: bold;
 }
 
-/* .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    background-color: #000000;
-    color: #fff;
-    box-shadow: 1px 1px 2px 1px #808080;
-}
-
-.header nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-
-.header li {
-    margin-right: 1rem;
-}
-
 .navLink {
     cursor: pointer;
-    font-weight: 700;
-} */
+}
+
+.userInfo {
+    background-color: var(--buttons-nav-color);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.userInfo > * {
+    padding: 5px;
+}
