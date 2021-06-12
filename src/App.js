@@ -47,7 +47,6 @@ export default function App() {
         setGroups(wc2018Groups.groups);
       })
 
-
     async function getAppData() {
       if (!userState.user) return;
 
@@ -56,7 +55,7 @@ export default function App() {
       if (userPicks.length > 0) {
         setUserPicks({
           allPicks: userPicks,
-          totalPoints: userPicks[0].totalPoints
+          totalPoints: userPicks[0].totalPoints,
         })
       }
     }
@@ -135,9 +134,7 @@ export default function App() {
     }
 
     let totalPoints = handleGroupPointsCompare(userPicksArr, resultsArr);
-
     const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
-
     updatePicks(pickToUpdate, totalPoints, pickToUpdate._id);
   }
 
