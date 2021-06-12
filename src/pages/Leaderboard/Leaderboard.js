@@ -49,7 +49,7 @@ const Leaderboard = (props) => {
                     {
                         allPicksArr.map(user => (
                             <tr>
-                                <td>{user.uid}</td>
+                                <td>{user.username}</td>
                                 <td>{user.totalPoints}</td>
                                 <td>{round16Points}</td>
                                 <td>{quartersPoints}</td>

@@ -138,7 +138,8 @@ export default function App() {
 
     let totalPoints = handleGroupPointsCompare(userPicksArr, resultsArr);
     const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
-    updatePicks(pickToUpdate, totalPoints, pickToUpdate._id);
+    
+    updatePicks(pickToUpdate.totalPoints, userState.user.displayName, totalPoints, pickToUpdate._id);
   }
 
   function handleGroupPointsCompare(userPicks, resultsArr) {

@@ -21,16 +21,26 @@ function createPicks(data, username, totalPoints, uid) {
     }).then(res => res.json())
 }
 
-
-function updatePicks(data, totalPoints, username, _id) {
+function updatePicks(data, username, totalPoints, _id) {
     return fetch(`${BASE_URL}/${_id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'Application/json'
         },
-        body: JSON.stringify({data, totalPoints, username})
+        body: JSON.stringify({data, username, totalPoints})
     }).then(res => res.json())
 }
+
+
+// function updatePicks(data, totalPoints, username, _id) {
+//     return fetch(`${BASE_URL}/${_id}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-type': 'Application/json'
+//         },
+//         body: JSON.stringify({data, totalPoints, username})
+//     }).then(res => res.json())
+// }
 
 export {
     createPicks,
