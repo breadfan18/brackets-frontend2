@@ -48,18 +48,18 @@ export default function App() {
         setGroups(wc2018Groups.groups);
       })
 
+
     async function getAppData() {
-      if (!userState.user || userPicks.allPicks.length === 0) return;
-      
+      if (!userState.user) return;
+
       const picks = await fetchUserPicks(userState.user.uid);
 
-      console.log(picks);
-
-      setUserPicks({
-        allPicks: picks[0],
-        totalPoints: picks[0].totalPoints
-      })
-
+      if (picks.length > 0) {
+        setUserPicks({
+          allPicks: picks,
+          totalPoints: picks[0].totalPoints
+        })
+      }
     }
     getAppData();
 
@@ -176,7 +176,6 @@ export default function App() {
                       <div>HOME PAGE</div>
                       <button onClick={() => {
                         handlePointsCalc()
-                  
                       }}>TEST</button>
                     </>
                   }
@@ -229,6 +228,7 @@ export default function App() {
                       userPick={userPicks.allPicks}
                       setStandings={setResults}
                       groupStandings={results}
+                      calcPoints={handlePointsCalc}
                     />
                   }
                 />

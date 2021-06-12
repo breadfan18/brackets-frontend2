@@ -1,7 +1,7 @@
 import styles from './CurrentPicks.module.css';
 
 const CurrentPicks = (props) => {
-    let userPicks = props.allPicks;
+    let userPicks = props.allPicks[0];
 
     console.log(userPicks);
     let groupsArray = [];
