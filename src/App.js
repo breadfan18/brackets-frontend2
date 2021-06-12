@@ -10,6 +10,7 @@ import Groups from './components/Groups/Groups';
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
+import Login from './components/Login/Login';
 
 export default function App() {
   const pointPerCorrectGroupPosition = 8;
@@ -169,9 +170,7 @@ export default function App() {
                     <>
                       <article>Welcome {userState.user.displayName}!!</article>
                       <div>HOME PAGE</div>
-                      <button onClick={() => {
-                        handlePointsCalc()
-                      }}>TEST</button>
+                      <button onClick={() => {handlePointsCalc()}}>TEST</button>
                     </>
                   }
                 />
@@ -231,8 +230,7 @@ export default function App() {
             </>
             :
             <>
-              <article>Welcome to Soccer Brackets.</article>
-              <article>Log in to Continue</article>
+              <Login />
             </>
         }
       </div>

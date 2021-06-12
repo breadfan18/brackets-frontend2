@@ -43,10 +43,11 @@ const Header = (props) => {
                                 </li>
                             </>
                             :
-                            <li
-                                className={styles.navLink}
-                                onClick={login}
-                            >Login</li>
+                            // <li
+                            //     className={styles.navLink}
+                            //     onClick={login}
+                            // >Login</li>
+                            <li></li>
                     }
                 </ul>
             </nav>

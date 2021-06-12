@@ -1,0 +1,28 @@
+.loginPage {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.loginCard{
+    background-color: rgba(255,255,255,0.4);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+.loginButton {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.loginButton > span {
+    margin-right: 10px;
+}
