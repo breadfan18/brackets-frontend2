@@ -18,6 +18,7 @@ export default function App() {
 
   const [userPicks, setUserPicks] = useState({
     allPicks: [],
+    totalPoints: 0,
     pickSaved: false
   })
 
@@ -48,11 +49,15 @@ export default function App() {
       })
 
     async function getAppData() {
-      if (!userState.user) return;
+      if (!userState.user || userPicks.allPicks.length === 0) return;
+      
       const picks = await fetchUserPicks(userState.user.uid);
 
+      console.log(picks);
+
       setUserPicks({
-        allPicks: picks,
+        allPicks: picks[0],
+        totalPoints: picks[0].totalPoints
       })
 
     }
@@ -78,6 +83,8 @@ export default function App() {
 
     setUserPicks({
       allPicks: userPicks.allPicks,
+      totalPoints: userPicks.totalPoints,
+      pickSaved: userPicks.pickSaved,
       picks: {
         ...userPicks.picks,
         [groupLetterKey]: teams
@@ -95,21 +102,12 @@ export default function App() {
       const pick = await createPicks(userPicks.picks, userState.user.uid);
       setUserPicks({
         allPicks: [...userPicks.allPicks, pick],
+        totalPoints: userPicks.totalPoints,
         pickSaved: true
       }
       )
     }
   }
-
-  function handleUpdate() {
-    if (!userState.user) return;
-
-
-    const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
-
-    updatePicks(pickToUpdate, pickToUpdate._id);
-  }
-
 
   function handlePointsCalc() {
     const userPicksObj = userPicks.allPicks[0];
@@ -136,16 +134,17 @@ export default function App() {
       }
       counter2++;
     }
-    console.log(handleGroupPointsCompare(userPicksArr, resultsArr));
 
-    setUserPicks(prevState => ({
-      allPicks: userPicks.allPicks,
-      picks: {
-        ...userPicks.allPicks,
-        totalPoints: handleGroupPointsCompare(userPicksArr, resultsArr)
-      }
-        
-    }));
+    // setUserPicks(prevState => ({
+    //     ...prevState,
+    //     totalPoints: handleGroupPointsCompare(userPicksArr, resultsArr)
+    // }));
+
+    let totalPoints = handleGroupPointsCompare(userPicksArr, resultsArr);
+
+    const pickToUpdate = userPicks.allPicks.find(pick => pick._id);
+
+    updatePicks(pickToUpdate, totalPoints, pickToUpdate._id);
   }
 
   function handleGroupPointsCompare(userPicks, resultsArr) {
@@ -177,7 +176,7 @@ export default function App() {
                       <div>HOME PAGE</div>
                       <button onClick={() => {
                         handlePointsCalc()
-                        handleUpdate()
+                  
                       }}>TEST</button>
                     </>
                   }

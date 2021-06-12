@@ -16,13 +16,13 @@ function createPicks(data, uid) {
 }
 
 
-function updatePicks(data, _id) {
+function updatePicks(data, totalPoints, _id) {
     return fetch(`${BASE_URL}/${_id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'Application/json'
         },
-        body: JSON.stringify({data})
+        body: JSON.stringify({data, totalPoints})
     }).then(res => res.json())
 }
 
