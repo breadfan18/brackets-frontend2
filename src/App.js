@@ -111,18 +111,18 @@ export default function App() {
     }
   }
 
-  // async function handleDelete(id) {
-  //   if(!userState.user) return;
+  async function handleDelete(id) {
+    // if(!userState.user) return;
 
-  //   try {
-  //     const picks = await deletePicks(id);
-  //     setUserPicks(prevState => ({
-  //       allPicks: [],
-  //       totalPoints: 0
-  //     }));
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
+    // try {
+    //   const picks = await deletePicks(id);
+    //   setUserPicks(prevState => ({
+    //     allPicks: [],
+    //     totalPoints: 0
+    //   }));
+    // } catch (error) {
+    //   console.log(error)
+    // }
   }
 
   function handlePointsCalc() {
