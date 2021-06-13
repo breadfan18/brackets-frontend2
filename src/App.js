@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { getGroups } from './services/soccer-api';
 import { fetchResults } from './services/results-service';
-import { createPicks, fetchUserPicks, updatePicks } from './services/picks-service';
+import { createPicks, fetchUserPicks, updatePicks, deletePicks } from './services/picks-service';
 import { Route, Switch } from 'react-router-dom';
 import { auth } from './services/firebase';
 import Header from './components/Header/Header';
@@ -111,6 +111,20 @@ export default function App() {
     }
   }
 
+  // async function handleDelete(id) {
+  //   if(!userState.user) return;
+
+  //   try {
+  //     const picks = await deletePicks(id);
+  //     setUserPicks(prevState => ({
+  //       allPicks: [],
+  //       totalPoints: 0
+  //     }));
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  }
+
   function handlePointsCalc() {
     const userPicksObj = userPicks.allPicks[0];
     const resultsObj = results[0];
@@ -200,6 +214,7 @@ export default function App() {
                     <CurrentPicks
                       user={userState.user}
                       allPicks={userPicks.allPicks}
+                      delete={handleDelete}
                     />
                   }
                 />

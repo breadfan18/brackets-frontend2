@@ -31,9 +31,16 @@ function updatePicks(data, username, totalPoints, _id) {
     }).then(res => res.json())
 }
 
+function deletePicks(id) {
+    return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE'
+      }).then(res => res.json())
+}
+
 export {
     createPicks,
     updatePicks,
     fetchUserPicks,
-    fetchAllUserPicks
+    fetchAllUserPicks,
+    deletePicks
 }

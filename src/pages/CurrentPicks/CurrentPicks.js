@@ -1,9 +1,8 @@
 import styles from './CurrentPicks.module.css';
+import {deletePicks} from '../../services/picks-service';
 
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];
-
-    console.log(userPicks);
     let groupsArray = [];
     let counter = 0;
     let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -51,7 +50,7 @@ const CurrentPicks = (props) => {
                     <button class="btn waves-effect waves-light" type="submit" name="action">Edit Picks
                     <i class="material-icons right">edit</i>
                     </button>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Delete Picks
+                    <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => props.delete(userPicks._id)}>Delete Picks
                     <i class="material-icons right">delete_forever</i>
                     </button>
                 </div>
