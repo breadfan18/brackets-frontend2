@@ -9,8 +9,17 @@
     font-weight: bold;
 }
 
-h4 {
-    margin-top: 15px;
+.leaderboardh4 {
+    padding: 15px;
+    width: 1000px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1.5rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-top: 10px;
 }
 
 #leaderTbody > tr:first-child {

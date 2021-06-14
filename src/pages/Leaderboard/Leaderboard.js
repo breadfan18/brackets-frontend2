@@ -31,7 +31,7 @@ const Leaderboard = (props) => {
     return (
 
         <div className={styles.leaderBoardRoot}>
-            <h4>Leader Board</h4>
+            <h4 className={styles.leaderboardh4}>Leader Board</h4>
             <table className='centered'>
                 <thead>
                     <tr>
