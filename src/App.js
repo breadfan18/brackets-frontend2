@@ -16,28 +16,12 @@ import Login from './components/Login/Login';
 export default function App() {
   const pointPerCorrectGroupPosition = 8;
   const [groups, setGroups] = useState([]);
-
   const [userPicks, setUserPicks] = useState({
     allPicks: [],
     totalPoints: 0,
     pickSaved: false
   })
-
-  const [results, setResults] = useState({
-    'Group A': [],
-    'Group B': [],
-    'Group C': [],
-    'Group D': [],
-    'Group E': [],
-    'Group F': [],
-    'Group G': [],
-    'Group H': [],
-    roundOf16Results: {},
-    quartersResults: {},
-    semisResults: {},
-    finalResult: String,
-  });
-
+  const [results, setResults] = useState({});
   const [userState, setUserState] = useState({
     user: null
   });
@@ -116,7 +100,7 @@ export default function App() {
     if(!userState.user) return;
 
     try {
-      const picks = await deletePicks(id);
+      await deletePicks(id);
       setUserPicks(prevState => ({
         allPicks: [],
         totalPoints: 0
@@ -203,7 +187,9 @@ export default function App() {
                 <Route
                   exact path='/knockouts'
                   render={() =>
-                    <Knockouts />
+                    <Knockouts 
+                      grpResults={results}
+                    />
                   }
                 />
                 <Route
