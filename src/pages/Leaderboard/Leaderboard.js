@@ -7,6 +7,8 @@ const Leaderboard = (props) => {
     let quartersPoints = 40;
     let semisPoints = 20;
     let finalsPoints = 15;
+    const medalImgsArr= ['https://i.imgur.com/y4jufuC.png', 'https://i.imgur.com/qxkk69T.png', 'https://i.imgur.com/EMxQ5x8.png'];
+    const potatoImg = 'https://i.imgur.com/xbHS3w6.png';
 
     const [allUserPicks, setAllUserPicks] = useState({
         allPicks: [],
@@ -24,15 +26,16 @@ const Leaderboard = (props) => {
         getAllUserData();
     }, [])
 
-    const allPicksArr = allUserPicks.allPicks.sort((a,b) => (a.totalPoints > b.totalPoints) ? -1 : 1);
+    const allPicksArr = allUserPicks.allPicks.sort((a, b) => (a.totalPoints > b.totalPoints) ? -1 : 1);
 
     return (
 
         <div className={styles.leaderBoardRoot}>
             <h4>Leader Board</h4>
-            <table className='striped centered'>
+            <table className='centered'>
                 <thead>
                     <tr>
+                        <th>Medal</th>
                         <th>Player</th>
                         <th>Group Stages</th>
                         <th>Round of 16</th>
@@ -43,10 +46,17 @@ const Leaderboard = (props) => {
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id={styles.leaderTbody}>
                     {
-                        allPicksArr.map(user => (
+                        allPicksArr.map((user, idx) => (
                             <tr>
+                                <td>
+                                    <img src={
+                                        idx < 3 ? medalImgsArr[idx] : potatoImg
+                                    } alt="gold"
+                                        style={{ height: '3.3rem' }}
+                                    />
+                                </td>
                                 <td>{user.username}</td>
                                 <td>{user.totalPoints}</td>
                                 <td>{round16Points}</td>

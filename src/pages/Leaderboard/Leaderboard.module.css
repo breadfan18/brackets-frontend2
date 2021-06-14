@@ -7,9 +7,33 @@
 
 #totalValues {
     font-weight: bold;
-    font-size: 1.3rem;
 }
 
 h4 {
     margin-top: 15px;
+}
+
+#leaderTbody > tr:first-child {
+    color: gold;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#leaderTbody > tr:nth-child(2) {
+    color: silver;
+    font-weight: bold;
+    font-size: 1.65rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#leaderTbody > tr:nth-child(3) {
+    color: #cd7f32;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#leaderTbody > tr {
+    font-weight: bold;
 }

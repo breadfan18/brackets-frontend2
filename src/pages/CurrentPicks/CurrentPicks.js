@@ -18,7 +18,7 @@ const CurrentPicks = (props) => {
         <div className={styles.currentPicks}>
             <section className={styles.groupStagePicks}>
                 <h4 id={styles.groupStagePicksh4}>Group Stage Picks</h4>
-                <table className='striped centered'>
+                <table className='centered'>
                     <thead>
                       <tr>  <th>Group</th>
                         <th>First</th>
