@@ -3,6 +3,8 @@ import {deletePicks} from '../../services/picks-service';
 
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];
+
+    console.log(userPicks._id);
     let groupsArray = [];
     let counter = 0;
     let groupLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
