@@ -4,7 +4,7 @@
     margin-top: 0;
     color: white;
     background-color: var(--black-low-opacity);
-    /* padding: 20px; */
+    height: 100vh;
 }
 
 #editDeleteButtons {

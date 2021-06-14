@@ -3,12 +3,25 @@
 .knockoutsContainer {
     color: white;
     background-color: var(--black-low-opacity);
+    height: 100vh;
 }
 
 h4 {
     margin-top: 0;
     padding-top: 20px;
     text-align: center;
+    text-decoration: underline;
+}
+
+h5 {
+    margin-top: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#simLink{
+    color: white;
+    text-decoration: underline;
 }
 
 .round16Section {
