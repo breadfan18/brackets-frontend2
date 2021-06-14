@@ -1,5 +1,4 @@
 import styles from './CurrentPicks.module.css';
-import {deletePicks} from '../../services/picks-service';
 
 const CurrentPicks = (props) => {
     let userPicks = props.allPicks[0];

@@ -10,6 +10,7 @@ import Groups from './components/Groups/Groups';
 import CurrentPicks from './pages/CurrentPicks/CurrentPicks';
 import Simulate from './pages/Simulate/Simulate';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
+import Knockouts from './pages/Knockouts/Knockouts';
 import Login from './components/Login/Login';
 
 export default function App() {
@@ -202,10 +203,7 @@ export default function App() {
                 <Route
                   exact path='/knockouts'
                   render={() =>
-                    <>
-                      <article>Welcome {userState.user.displayName}!!</article>
-                      <div>HOME PAGE</div>
-                    </>
+                    <Knockouts />
                   }
                 />
                 <Route
