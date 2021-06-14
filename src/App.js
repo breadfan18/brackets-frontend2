@@ -158,7 +158,7 @@ export default function App() {
   return (
     <>
       <Header user={userState.user} />
-      <div>
+      <div className='mainBody'>
         {
           userState.user ?
             <>
