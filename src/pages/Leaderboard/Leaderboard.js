@@ -24,7 +24,7 @@ const Leaderboard = (props) => {
         getAllUserData();
     }, [])
 
-    const allPicksArr = allUserPicks.allPicks;
+    const allPicksArr = allUserPicks.allPicks.sort((a,b) => (a.totalPoints > b.totalPoints) ? -1 : 1);
 
     return (
 
