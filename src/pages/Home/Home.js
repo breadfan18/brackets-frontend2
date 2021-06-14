@@ -12,19 +12,19 @@ const Home = (props) => (
             <form>
                 <p className={style.pickStatusContainer}>
                     <label>
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" class="filled-in" checked={props.grpStagePicks ? 'checked' : null} />
                         <span className={style.picksStatusLabel}>Group Stage Picks Made</span>
                     </label>
                 </p>
                 <p className={style.pickStatusContainer}>
                     <label>
-                        <input type="checkbox" class="filled-in" checked="checked" />
-                        <span className={style.picksStatusLabel}>Group Results Simulated</span>
+                        <input type="checkbox" class="filled-in" checked={props.resultsMade ? 'checked' : null} />
+                        <span className={style.picksStatusLabel}>Group Stage Results Simulated</span>
                     </label>
                 </p>
                 <p className={style.pickStatusContainer}>
                     <label>
-                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <input type="checkbox" class="filled-in" checked={props.points > 0 ? 'checked' : null} />
                         <span className={style.picksStatusLabel}>Group Stage Points Calculated</span>
                     </label>
                 </p>
@@ -37,7 +37,7 @@ const Home = (props) => (
                 <p className={style.pickStatusContainer}>
                     <label>
                         <input type="checkbox" class="filled-in" />
-                        <span className={style.picksStatusLabel}>Knockout Roudns Results Simulated</span>
+                        <span className={style.picksStatusLabel}>Knockout Rounds Results Simulated</span>
                     </label>
                 </p>
             </form>

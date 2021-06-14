@@ -117,7 +117,7 @@ export default function App() {
     const userPicksArr = [];
     const resultsArr = [];
 
-    let counter1 = 0;
+    let counter1 = 0; 
     for (const arr in userPicksObj) {
       if (counter1 < 8) {
         userPicksObj[arr].forEach(team => {
@@ -170,6 +170,9 @@ export default function App() {
                     <Home 
                       username={userState.user.displayName}
                       userImg={userState.user.photoURL}
+                      grpStagePicks={userPicks.allPicks.length}
+                      resultsMade={results.length}
+                      points={userPicks.totalPoints}
                     />
                   }
                 />
