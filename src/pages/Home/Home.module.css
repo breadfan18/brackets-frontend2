@@ -1,0 +1,37 @@
+@import '../../index.css';
+
+.homeContainer{
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black-low-opacity);
+    padding-top: 50px;
+    /* height: 100vh; */
+}
+
+#userCard {
+    width: 350px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: black;
+    font-size: 1.2rem;
+    background-color: rgba(255,255,255,0.65);
+}
+
+.welcomeName {
+    width: 350px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 1.5rem;
+    border-top-left-radius: 30px;
+    align-self: flex-start;
+}
+

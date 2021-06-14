@@ -18,6 +18,8 @@
     padding: 30px;
     border-radius: 30px;
     margin-top: 30px;
+    border: 2px solid gray;
+    color: black;
 }
 
 .loginButton {
