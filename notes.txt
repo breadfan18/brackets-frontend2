@@ -5,6 +5,6 @@ Order of the presentation:
 3. Make group stage picks - open dev drawer and see it being added to state
 4. Submit gruop stage picks
 5. Go to Simulate tab > Simulate Group Results > Commit Group Results
-6. Calculate points
+6. REFRESH PAGE, and then Calculate points
 7. Go to leaderboard
 

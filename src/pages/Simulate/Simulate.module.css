@@ -12,6 +12,14 @@ h4 {
 
 .simButton {
     border: 2px solid black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.simButton:hover {
+    background-color: var(--buttons-nav-color);
+    color: white;
 }
 
 .simulateContainer section {
