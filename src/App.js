@@ -37,6 +37,7 @@ export default function App() {
     async function getAppData() {
       if (!userState.user) return;
 
+      //get and set user picks
       const userPicks = await fetchUserPicks(userState.user.uid);
 
       if (userPicks.length > 0) {
@@ -46,13 +47,12 @@ export default function App() {
           username: userPicks[0].username
         })
       }
-    }
-    getAppData();
 
-    fetchResults()
-      .then(results => {
-        setResults(results);
-      })
+      //get the results data
+      await fetchResults().then(results => setResults(results));
+    }
+
+    getAppData();
 
     const unsubscribe = auth.onAuthStateChanged(user => setUserState({ user }));
 
@@ -62,7 +62,7 @@ export default function App() {
   }, [userState.user]);
 
 
-  //handleSubmit Function
+  //handleSubmit Function to submit the picks made
   function handlePicksSave(teams, e, groupLetterKey) {
     if (!userState.user) return;
     e.preventDefault();

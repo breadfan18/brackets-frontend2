@@ -5,7 +5,6 @@ function fetchResults() {
     return fetch(BASE_URL).then(res => res.json());
 }
 
-
 function createResults(data) {
     return fetch(BASE_URL, {
         method: 'POST',
