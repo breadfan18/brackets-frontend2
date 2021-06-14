@@ -31,7 +31,7 @@ const Simulate = (props) => {
             <section>
                 <h4>Group Stage</h4>
                 <button onClick={() => groupStandings()} className={styles.simButton}>Simulate Results</button>
-                <button onClick={() => {createResults(props.groupStandings)}} className={styles.simButton}>Commit Results</button>
+                <button onClick={async () => {await createResults(props.groupStandings)}} className={styles.simButton}>Commit Results</button>
                 <button onClick={() => {props.calcPoints()}} className={styles.simButton}>Calculate Points</button>
             </section>
             <hr />
