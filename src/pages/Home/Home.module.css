@@ -6,11 +6,12 @@
     justify-content: center;
     background-color: var(--black-low-opacity);
     padding-top: 50px;
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 #userCard {
     width: 350px;
+    height: 80vh;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -33,5 +34,14 @@
     font-size: 1.5rem;
     border-top-left-radius: 30px;
     align-self: flex-start;
+}
+
+.pickStatusContainer {
+    border-bottom: 1px solid gray;
+}
+
+.picksStatusLabel{
+    color: black;
+    font-weight: bold;
 }
 
