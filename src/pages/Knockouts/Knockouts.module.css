@@ -8,6 +8,7 @@
 h4 {
     margin-top: 0;
     padding-top: 20px;
+    text-align: center;
 }
 
 .round16Section {
@@ -20,7 +21,6 @@ h4 {
 .gameArticle {
     width: 350px;
     padding-bottom: 20px;
-    /* border: 1px solid rgba(255,255,255,0.3); */
     display: flex;
     flex-direction: column;
     align-items: center;
