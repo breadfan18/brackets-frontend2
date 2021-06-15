@@ -198,43 +198,6 @@ const Group = (props) => {
 
 ```
 
-### Create Card flow - User for a new card application could not be found
-**Problem**
-- When submitting new card form, Could not find user _id since it was not part of req.params
-- So user information for a given card could not be displayed in the card main index page 
-
-**Solution**
-- Solved this issue by first using the `findOne()` method for finding the User based on first name and last name
-- Then the entire code for `Model.create()` was run inside the findOne fucntion, so that i could pass in the user information for that card. 
-- Solution code for the card create controller function below: 
-
-```javascript 
-function create(req, res) {
-    let nameSplitArr = req.body.applicant.split(' ');
-    User.findOne({
-        firstName: nameSplitArr[0],
-        lastName: nameSplitArr[1]
-    }, function (err, user) {
-        let newCardObj = {
-            applicant: user._id,
-            issuer: req.body.issuer,
-            cardName: req.body.cardName,
-            appDate: req.body.appDate,
-            creditPull: [req.body.experian, req.body.equifax, req.body.transunion],
-            nextFeeDate: req.body.nextFeeDate,
-            creditLine: req.body.creditLine,
-            bonusSpend: req.body.bonusSpend,
-            bonusSpendDate: req.body.bonusSpendDate,
-            annualFee: req.body.annualFee
-        }
-        Card.create(newCardObj, function(err, card){
-            if(err) return res.redirect('/cards/new');
-            res.redirect('/cards');
-        })
-    })
-}
-```
-
 ## Future Enhancements
 
 ### Complete Knockout Round Picks
