@@ -1,6 +1,7 @@
 import styles from './Simulate.module.css';
 import { getGroupsResults } from '../../services/soccer-api';
 import { createResults } from '../../services/results-service';
+import {Link} from 'react-router-dom';
 
 const Simulate = (props) => {
 
@@ -30,9 +31,10 @@ const Simulate = (props) => {
         <div className={styles.simulateContainer}>
             <section>
                 <h4>Group Stage</h4>
-                <button onClick={() => groupStandings()} className={styles.simButton}>Simulate Results</button>
-                <button onClick={async () => {await createResults(props.groupStandings)}} className={styles.simButton}>Commit Results</button>
-                <button onClick={() => {props.calcPoints()}} className={styles.simButton}>Calculate Points</button>
+                <button onClick={() => {groupStandings(); alert('Group Results Simulated')}} className={styles.simButton}>Simulate Results</button>
+                <button onClick={async () => {await createResults(props.groupStandings); alert('Group Results Commited to Mongo DB')}} className={styles.simButton}>Commit Results</button>
+                <Link to='/leaderboard' onClick={() => props.calcPoints()} className={styles.simButton}>Calculate Points</Link>
+
             </section>
             <hr />
             <section>
