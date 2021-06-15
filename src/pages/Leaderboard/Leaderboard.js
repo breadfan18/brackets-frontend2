@@ -1,12 +1,13 @@
 import styles from './Leaderboard.module.css';
 import { useState, useEffect } from "react";
 import { fetchAllUserPicks } from '../../services/picks-service';
+import { Chance } from 'chance';
 
-const Leaderboard = (props) => {
-    let round16Points = 20;
-    let quartersPoints = 40;
-    let semisPoints = 20;
-    let finalsPoints = 15;
+const Leaderboard = () => {
+    let round16Points = 0;
+    let quartersPoints = 0;
+    let semisPoints = 0;
+    let finalsPoints = 0;
     const medalImgsArr= ['https://i.imgur.com/y4jufuC.png', 'https://i.imgur.com/qxkk69T.png', 'https://i.imgur.com/EMxQ5x8.png'];
     const potatoImg = 'https://i.imgur.com/xbHS3w6.png';
 
@@ -59,10 +60,10 @@ const Leaderboard = (props) => {
                                 </td>
                                 <td>{user.username}</td>
                                 <td>{user.totalPoints}</td>
-                                <td>{round16Points}</td>
-                                <td>{quartersPoints}</td>
-                                <td>{semisPoints}</td>
-                                <td>{finalsPoints}</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
                                 <td id={styles.totalValues}>{user.totalPoints + round16Points + quartersPoints + semisPoints + finalsPoints}</td>
                             </tr>
                         ))
