@@ -16,20 +16,21 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - CSS3
     - CSS Flexbox
     - Materialize CSS
-- Javascript
-- React.JS
+- JavaScript
+- React.js
+    - Array-Move (helps with sorting array data)
+    - React Sortable HOC (High Order Components) - Used for soring and moving React Components
+    - Client Side Routing
 - MongoDB
 - Node.JS
 - Express.JS
-- Google Firebase (Authentication)
+- Google Firebase (Authentication and Authorization)
 
 
 ## Other NPM Packages Used
 - Mongoose
 - Morgan
 - DotEnv (for setting the environment variables in the .env file)
-- Array-Move (helps with sorting array data)
-- React Sortable HOC (High Order Components) - Used for soring and moving React Components
 - Chance (package that helps create random data)
 
 
@@ -119,6 +120,43 @@ const picksSchema = new mongoose.Schema({
 **Solution**
 - I researched online and found these `react-sortable-hoc` and `array-move` libraries that allow to "Drag and Drop" react components. This would allow the user to easily drap the teams to the positions they want to predict. 
 - The implementation took a while due to the learning curve, and capturing data and saving them in state also took a while due to added complications, but in the end, the implementation worked out great. 
+
+**Code**
+```javascript
+const SortableTeamsContainer = sortableContainer(({ children }) => <div className='teams'>{children}</div>);
+const SortableTeam = sortableElement(({ team }) => <Team key={team} team={team} />)
+  
+
+const Group = (props) => {
+    const [teams, setTeams] = useState(props.group);
+    const onSortEnd = ({oldIndex, newIndex}) => setTeams(arrayMove(teams, oldIndex, newIndex));
+
+    return (
+        <article className={style.groupCard}>   
+            <div className={style.groupName}>{props.groupLetter}</div>
+            <SortableTeamsContainer onSortEnd={onSortEnd}>
+                {
+                    teams.map((team, i) => (
+                        <SortableTeam
+                            index={i}
+                            team={team}
+                            key={team.code}
+                        />
+                    ))
+                }
+            </SortableTeamsContainer>
+            <button onClick={(e) => {
+                let teamsArr = [];
+                teams.forEach(team => {
+                    teamsArr.push(team.name);
+                });
+                props.saveGroupPick(teamsArr, e, props.groupLetter)}
+            }>Save</button>
+        </article>
+    )
+}
+
+```
 
 ### Create Card flow - User for a new card application could not be found
 **Problem**
