@@ -24,6 +24,7 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - MongoDB
 - Node.JS
 - Express.JS
+- AJAX
 - Google Firebase (Authentication and Authorization)
 
 ## Other NPM Packages Used
@@ -32,6 +33,23 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - DotEnv (for setting the environment variables in the .env file)
 - Chance (package that helps create random data)
 
+## Service Modules
+- Firebase Service
+    - Login
+    - Logout
+- Soccer-API Service
+    - Fetch Group Games from 3rd party API
+    - Fetch Group Game Results from 3rd party API
+- Picks Service
+    - Fetch user picks
+    - Fetch ALL users picks
+    - Create Picks for a user
+    - Update a pick for a user
+    - Delete a selected pick for a user
+- Results Service
+    - Create results document in monboDB
+    - Fetch game results from MongoDB
+    
 
 ## App CRUD Functionality
 - **Create** group stage picks
@@ -235,5 +253,5 @@ function create(req, res) {
 
 ## Key Takeaways
 - React kicked my butt 
-- React Routing and Links are incredibly powerful 
+- React Client side routing and Links are incredibly powerful, and with the use of 'Pages', make it easy easy and fun to create a SPA (Single Page Application)
 - Implement OAUTH before writing the bulk of your code. 
