@@ -39,16 +39,20 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
     - Logout
 - Soccer-API Service
     - Fetch Group Games from 3rd party API
+        - URL: `https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.groups.json'`
     - Fetch Group Game Results from 3rd party API
+        - URL: `https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.standings.json`
 - Picks Service
-    - Fetch user picks
-    - Fetch ALL users picks
-    - Create Picks for a user
-    - Update a pick for a user
-    - Delete a selected pick for a user
-- Results Service
-    - Create results document in monboDB
-    - Fetch game results from MongoDB
+    - URL: `https://brackets-backend.herokuapp.com/api/picks`
+    - Fetch user picks: `get /api/picks` 
+    - Fetch ALL users picks: `get /api/picks/all`
+    - Create Picks for a user: `post /api/picks`
+    - Update a pick for a user: `put /api/picks/<:id>`
+    - Delete a selected pick for a user: `delete /api/picks/<:id>`
+- Results Service 
+    - URL: `https://brackets-backend.herokuapp.com/api/results`
+    - Create results in monboDB: `post /api/results`
+    - Fetch game results from MongoDB: `get /api/results`
     
 
 ## App CRUD Functionality
