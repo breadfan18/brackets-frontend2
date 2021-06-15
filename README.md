@@ -131,17 +131,6 @@ const resultsSchema = new mongoose.Schema({
 );
 ```
 
-## App Features
-- Register Users / Delete Users 
-- Add Cards for Registered Users
-- Display Credit Card information in a sortable, searchable table format
-- User tabs in the index page, for viewing cards for specific users
-- Highlighting for Closed and Downgraded Cards
-- Click Card Row to view Card Details 
-- Add/Delete Notes to cards in the Card View
-- Update card Details 
-- Dark Mode Implementation
-
 ## App Screenshots
 
 ### Login Screen
