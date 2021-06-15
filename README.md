@@ -10,7 +10,6 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 **Back End - Heroku:**
 - https://swaroop-soccer-brackets.netlify.app
 
-To start using the app, simply navigate to the heroku link, login with your gmail account. 
 
 ## Technologies Used
 - HTML5
@@ -37,21 +36,47 @@ To start using the app, simply navigate to the heroku link, login with your gmai
 ## Wireframes 
 These were the wireframes I created before starting to write any code for this project. 
 
-### Main Screen
-![mainscreenLayout](https://i.imgur.com/1JeTRBw.png)
+### Group Stages
+![groups](https://i.imgur.com/r1RuqQO.png)
 
-### Add A Card Form 
-![addACardForm](https://i.imgur.com/K8fqDqN.png)
+### Knockout Games
+![knockouts](https://i.imgur.com/VeOK630.png)
 
-### Add A User Form 
-![addAUSerForm](https://i.imgur.com/mDpFxS2.png)
+### Leaderboard 
+![leader](https://i.imgur.com/tJWnibW.png)
 
 
 ## ERD Diagram
-- The Cards collection with have an embedded relationship with the Benefits schema
-- The Cards collection with have a Referenced Relationship with the Users model
+- The only schema needed for this application is the `Picks Schema', which can hold information for group stage picks, and also for all the knockout round picks. 
 
-![erd](https://i.imgur.com/GR1ENea.png)
+**ERD - Initial Design:**
+![erd](https://i.imgur.com/m5xtNOn.png)
+
+**ERD - Final Schema:**
+```javascript
+const picksSchema = new mongoose.Schema({
+    'Group A': [],
+    'Group B': [],
+    'Group C': [],
+    'Group D': [],
+    'Group E': [],
+    'Group F': [],
+    'Group G': [],
+    'Group H': [],
+    roundOf16Picks: {},
+    quartersPicks: {},
+    semisPicks: {},
+    finalPick: String,
+    totalPoints: Number,
+    uid: String,
+    username: String,
+    photo: String
+},
+    {
+        timestamps: true
+    }
+);
+```
 
 ## App Features
 - Register Users / Delete Users 
