@@ -34,21 +34,20 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - Chance (package that helps create random data)
 
 ## Service Modules 
-- Firebase Service
-    - Login
-    - Logout
-- Picks Service
-    - URL: `https://brackets-backend.herokuapp.com/api/picks`
-    - Fetch user picks: `get /api/picks` 
-    - Fetch ALL users picks: `get /api/picks/all`
-    - Create Picks for a user: `post /api/picks`
-    - Update a pick for a user: `put /api/picks/<:id>`
-    - Delete a selected pick for a user: `delete /api/picks/<:id>`
-- Results Service 
-    - URL: `https://brackets-backend.herokuapp.com/api/results`
-    - Create results in monboDB: `post /api/results`
-    - Fetch game results from MongoDB: `get /api/results`
-    
+
+**Service**|**URL/Endpoint**|**Usage**|
+|-------------|-------------|-------------|
+|Firebase|`login`|Log In
+||`logout`|Log Out
+|Picks Service|`https://brackets-backend.herokuapp.com/api/picks`|URL
+||`get /api/picks`|Fetch user picks
+||`get /api/picks/all`| Fetch ALL users picks
+||`post /api/picks`|Create Picks for a user
+||`put /api/picks/<:id>`|Update a pick for a user
+||`delete /api/picks/<:id>`|Delete a selected pick for a user
+|Results Service|`https://brackets-backend.herokuapp.com/api/results`|URL
+||`post /api/results`|Create results in monboDB
+||`get /api/results`|Fetch game results from MongoDB
 
 ## App CRUD Functionality
 - **Create** group stage picks
