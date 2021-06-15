@@ -40,6 +40,12 @@ const Home = (props) => (
                         <span className={style.picksStatusLabel}>Knockout Rounds Results Simulated</span>
                     </label>
                 </p>
+                <p className={style.pickStatusContainer}>
+                    <label>
+                        <input type="checkbox" class="filled-in" />
+                        <span className={style.picksStatusLabel}>Knockout Rounds Points Calculated</span>
+                    </label>
+                </p>
             </form>
 
         </article>

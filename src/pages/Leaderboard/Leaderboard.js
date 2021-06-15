@@ -70,6 +70,7 @@ const Leaderboard = () => {
                     }
                 </tbody>
             </table>
+            <div></div>
         </div>
     )
 }
