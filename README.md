@@ -91,38 +91,24 @@ const picksSchema = new mongoose.Schema({
 
 ## App Screenshots
 
-### Login Form
-![loginForm](https://i.imgur.com/EbhTlcj.png)
+### Login Screen
+![loginForm](https://i.imgur.com/7RUXCZq.png)
 
-### Cards Index Page
-![cardIndexPage](https://i.imgur.com/QNlq8V4.png)
+### User Landing Page - Dashboard
+![landingPage](https://i.imgur.com/SVGzsLy.jpg)
 
-### Add Users Page
-![Add Users](https://i.imgur.com/k26R7aD.jpg)
+### Group Stages Picks
+![gropuStagepage](https://i.imgur.com/repqdpT.jpg)
 
-### Add Card Page
-![Add Card](https://i.imgur.com/BjYzUD0.png)
+### Knockout Stages Page
+![knockouts](https://i.imgur.com/pR6dzlK.png)
 
-### Card Details Show Page
-![card show](https://i.imgur.com/qcfe3OT.png)
+### Current Picks
+![currentPicks](https://i.imgur.com/eYgvy0L.jpg)
 
+### Leaderboard
+![leaderboard](https://i.imgur.com/WZlq7qg.jpg)
 
-## App Screenshots - DARK MODE
-
-### Login Form
-![loginForm](https://i.imgur.com/x4Iw8Ri.png)
-
-### Cards Index Page
-![cardIndexPage](https://i.imgur.com/3O4eWjh.png)
-
-### Add Users Page
-![Add Users](https://i.imgur.com/c2woQe2.png)
-
-### Add Card Page
-![Add Card](https://i.imgur.com/vWdJCor.png)
-
-### Card Details Show Page
-![card show](https://i.imgur.com/3soZ8Zi.png)
 
 ## Challenges
 
