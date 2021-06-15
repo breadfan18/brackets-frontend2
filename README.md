@@ -8,7 +8,7 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - https://swaroop-soccer-brackets.netlify.app
 
 **Back End - Heroku:**
-- https://swaroop-soccer-brackets.netlify.app
+- https://brackets-backend.herokuapp.com/
 
 
 ## Technologies Used
@@ -264,4 +264,4 @@ function create(req, res) {
 - React kicked my butt, it's going to take some time to by comfortable with it
 - State can be very hard to manage, especially when you are conducting multiple CRUD functionalities, and have to adjust state every time. 
 - I need to understand react hooks a bit better. 
-- React Client side routing and Links are incredibly powerful, and with the use of 'Pages', make it easy easy and fun to create a SPA (Single Page Application)
+- React Client side routing and Links are incredibly powerful, and with the use of 'Pages', they make it easy and fun to create a SPA (Single Page Application)
