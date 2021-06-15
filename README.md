@@ -33,6 +33,12 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - DotEnv (for setting the environment variables in the .env file)
 - Chance (package that helps create random data)
 
+## Third Party APIs used
+**World Cup 2018 - Groups:**
+https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.groups.json
+
+**World Cup 2018 - Results:**
+https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.standings.json
 
 ## Wireframes 
 These were the wireframes I created before starting to write any code for this project. 
