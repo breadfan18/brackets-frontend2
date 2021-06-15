@@ -33,7 +33,7 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - DotEnv (for setting the environment variables in the .env file)
 - Chance (package that helps create random data)
 
-## Service Modules
+## Service Modules 
 - Firebase Service
     - Login
     - Logout
