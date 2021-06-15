@@ -20,7 +20,13 @@ const Header = (props) => {
                     :
                     <ul className={styles.userInfo}></ul>
             }
-            <h1>Soccer Brackets</h1>
+            <div className={styles.headerContainer}>
+                <img src="https://i.imgur.com/QtEi1f4.png" alt="" style={{height: '8rem', transform: 'scaleX(-1)'}} />
+                <img src="https://i.imgur.com/09OYzB1.png" alt="" style={{height: '8rem', transform: 'scaleX(-1)', opacity: '1'}} />
+                <h1>Soccer Brackets</h1>
+                <img src="https://i.imgur.com/09OYzB1.png" alt="" style={{height: '8rem', opacity: '1'}} />
+                <img src="https://i.imgur.com/QtEi1f4.png" alt="" style={{height: '8rem'}} />
+            </div>
             <nav className={styles.mainNav}>
                 <ul>
                     {

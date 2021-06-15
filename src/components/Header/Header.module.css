@@ -4,12 +4,22 @@
     color: white;
 }
 
-h1 {
+.headerContainer {
+    display: flex;
     background-color: rgba(0,0,0,0.8);
     margin-top: 0;
     margin-bottom: 0;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    text-shadow: -1px 1px rgb(241, 176, 78), 1px 1px rgb(241, 176, 78), 1px 1px rgb(241, 176, 78), 1px -1px rgb(241, 176, 78);
+}
+
+.headerContainer img {
+    opacity: 0.7;
 }
 
 .mainNav {
@@ -43,3 +53,4 @@ h1 {
 .userInfo > * {
     padding: 5px;
 }
+
