@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# GA Project 3 - Soccer Brackets
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+Soccer Brackets is a simple React app, that allows users to make predictions for major Soccer competitions like the World Cup, UEFA Euros etc. They can make their predition for group stage games, as well as knockout games. When the games happen, scores are calculated, and a leaderboard is generated. 
 
-## Available Scripts
+## Getting Started
+**Front End - Netlify:**
+- https://swaroop-soccer-brackets.netlify.app
 
-In the project directory, you can run:
+**Back End - Heroku:**
+- https://swaroop-soccer-brackets.netlify.app
 
-### `npm start`
+To start using the app, simply navigate to the heroku link, login with your gmail account. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
+- HTML5
+- CSS3
+    - CSS Flexbox
+    - Materialize CSS
+- Javascript
+- React.JS
+- MongoDB
+- Node.JS
+- Express.JS
+- Google Firebase (Authentication)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Other NPM Packages Used
+- Mongoose
+- Morgan
+- DotEnv (for setting the environment variables in the .env file)
+- Array-Move (helps with sorting array data)
+- React Sortable HOC (High Order Components) - Used for soring and moving React Components
+- Chance (package that helps create random data)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Wireframes 
+These were the wireframes I created before starting to write any code for this project. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Main Screen
+![mainscreenLayout](https://i.imgur.com/1JeTRBw.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Add A Card Form 
+![addACardForm](https://i.imgur.com/K8fqDqN.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Add A User Form 
+![addAUSerForm](https://i.imgur.com/mDpFxS2.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ERD Diagram
+- The Cards collection with have an embedded relationship with the Benefits schema
+- The Cards collection with have a Referenced Relationship with the Users model
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![erd](https://i.imgur.com/GR1ENea.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## App Features
+- Register Users / Delete Users 
+- Add Cards for Registered Users
+- Display Credit Card information in a sortable, searchable table format
+- User tabs in the index page, for viewing cards for specific users
+- Highlighting for Closed and Downgraded Cards
+- Click Card Row to view Card Details 
+- Add/Delete Notes to cards in the Card View
+- Update card Details 
+- Dark Mode Implementation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## App Screenshots
 
-## Learn More
+### Login Form
+![loginForm](https://i.imgur.com/EbhTlcj.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cards Index Page
+![cardIndexPage](https://i.imgur.com/QNlq8V4.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Add Users Page
+![Add Users](https://i.imgur.com/k26R7aD.jpg)
 
-### Code Splitting
+### Add Card Page
+![Add Card](https://i.imgur.com/BjYzUD0.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Card Details Show Page
+![card show](https://i.imgur.com/qcfe3OT.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## App Screenshots - DARK MODE
 
-### Making a Progressive Web App
+### Login Form
+![loginForm](https://i.imgur.com/x4Iw8Ri.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Cards Index Page
+![cardIndexPage](https://i.imgur.com/3O4eWjh.png)
 
-### Advanced Configuration
+### Add Users Page
+![Add Users](https://i.imgur.com/c2woQe2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Add Card Page
+![Add Card](https://i.imgur.com/vWdJCor.png)
 
-### Deployment
+### Card Details Show Page
+![card show](https://i.imgur.com/3soZ8Zi.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Challenges
 
-### `npm run build` fails to minify
+### Create Card Adding Data was Cumbersome
+**Problem**
+- My create card form was quite a long one, so whenever i needed to create a card, it took quite a bit of my time in order to create a card. I need to automate this process.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Solution**
+- Imported an npm package called `webdriverIO` which is a testing framework. But can also be used to automate the web ui. 
+- Wrote a `wdio script` for the addCard flow to quickly create card data whenever i needed it. 
+- Also imported an npm package called `chance` that is super useful for creating random data. So i used the chance package to create a random credit card name, numbers and dates so I wouldn't have to submit any information for the `createCard script`
+- DEMO SOLUTION!
+
+### Create Card flow - User for a new card application could not be found
+**Problem**
+- When submitting new card form, Could not find user _id since it was not part of req.params
+- So user information for a given card could not be displayed in the card main index page 
+
+**Solution**
+- Solved this issue by first using the `findOne()` method for finding the User based on first name and last name
+- Then the entire code for `Model.create()` was run inside the findOne fucntion, so that i could pass in the user information for that card. 
+- Solution code for the card create controller function below: 
+
+```javascript 
+function create(req, res) {
+    let nameSplitArr = req.body.applicant.split(' ');
+    User.findOne({
+        firstName: nameSplitArr[0],
+        lastName: nameSplitArr[1]
+    }, function (err, user) {
+        let newCardObj = {
+            applicant: user._id,
+            issuer: req.body.issuer,
+            cardName: req.body.cardName,
+            appDate: req.body.appDate,
+            creditPull: [req.body.experian, req.body.equifax, req.body.transunion],
+            nextFeeDate: req.body.nextFeeDate,
+            creditLine: req.body.creditLine,
+            bonusSpend: req.body.bonusSpend,
+            bonusSpendDate: req.body.bonusSpendDate,
+            annualFee: req.body.annualFee
+        }
+        Card.create(newCardObj, function(err, card){
+            if(err) return res.redirect('/cards/new');
+            res.redirect('/cards');
+        })
+    })
+}
+```
+
+## Future Enhancements
+
+### Implement Authorization
+- Future vision for this app is for the autheticated user to be the Family Admin. Each Family Admin can have their set of users (family members), and their set of credit cards that they can manage. 
+
+### Card Benefits 
+- Incluse additinal module to view benefits for each card
+
+### Login Strategies
+- Implement Login Strategies for LinkedIn and Facebook as well
+- Implement separate login functionality managed by the app itself. 
+
+## Bugs
+- Card View - Only first page , on click opend edit card page. Second, third page onwards don't click :/
+- Editing user information in the edit card flow, actually just changes the name of the user in the user document. Instead of attaching the user ._id to the card applicant field
+
+## Key Takeaways
+- I love doing this. 
+- REALLY think through models BEFORE starting to implement code
+- Implement OAUTH before writing the bulk of your code. 
