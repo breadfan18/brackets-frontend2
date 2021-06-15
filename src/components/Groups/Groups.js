@@ -19,8 +19,7 @@ const Groups = (props) => {
                 }
             </div>
             <div className='submitBtnWrapper'>
-                {/* <button className="btn waves-effect waves-light submitGrpPicks" type="submit" onClick={(e) => props.handleSubmit(e)}>Submit Picks</button> */}
-                <Link to='/' onClick={(e) => {props.handleSubmit(e); alert('Group Picks Submitted')}} className="btn waves-effect waves-light submitGrpPicks">Submit Picks</Link>
+                <Link to='/currentPicks' onClick={() => props.handleSubmit()} className="btn waves-effect waves-light submitGrpPicks">Submit Picks</Link>
             </div>
         </>
     )

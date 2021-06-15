@@ -80,9 +80,8 @@ export default function App() {
     });
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit() {
     if (!userState.user) return;
-    e.preventDefault();
 
     if (userPicks.pickSaved) {
       console.log('Pick already saved');

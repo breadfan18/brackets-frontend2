@@ -33,7 +33,7 @@ const Simulate = (props) => {
                 <h4>Group Stage</h4>
                 <button onClick={() => {groupStandings(); alert('Group Results Simulated')}} className={styles.simButton}>Simulate Results</button>
                 <button onClick={async () => {await createResults(props.groupStandings); alert('Group Results Commited to Mongo DB')}} className={styles.simButton}>Commit Results</button>
-                <Link to='/leaderboard' onClick={() => props.calcPoints()} className={styles.simButton}>Calculate Points</Link>
+                <Link to='/leaderboard' onClick={() => {props.calcPoints(); alert('Group Stage Points Calculated')}} className={styles.simButton}>Calculate Points</Link>
 
             </section>
             <hr />
