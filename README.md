@@ -26,12 +26,21 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - Express.JS
 - Google Firebase (Authentication and Authorization)
 
-
 ## Other NPM Packages Used
 - Mongoose
 - Morgan
 - DotEnv (for setting the environment variables in the .env file)
 - Chance (package that helps create random data)
+
+
+## CRUD Functionality
+- **Create** group stage picks
+- **Read** group stage picks and display them in Current Picks page
+- **Update** group stage picks with totalPoints when points are calculated
+- **Delete** Delete group stage picks
+
+
+
 
 ## Third Party APIs used
 **World Cup 2018 - Groups:**
