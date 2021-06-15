@@ -33,13 +33,12 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 - Chance (package that helps create random data)
 
 
-## CRUD Functionality
+## App CRUD Functionality
 - **Create** group stage picks
-- **Read** group stage picks and display them in Current Picks page
+- **Read** group stage picks for a user and display them in Current Picks page
+- **Read** group stage picks for ALL users and display total Points in leaderboard. 
 - **Update** group stage picks with totalPoints when points are calculated
 - **Delete** Delete group stage picks
-
-
 
 
 ## Third Party APIs used
@@ -212,21 +211,29 @@ function create(req, res) {
 
 ## Future Enhancements
 
-### Implement Authorization
-- Future vision for this app is for the autheticated user to be the Family Admin. Each Family Admin can have their set of users (family members), and their set of credit cards that they can manage. 
+### Complete Knockout Round Picks
+- User should be able to make their picks after each round of games
+- After each round of games are completed, they can "simulate" results, and calculate points as well 
 
-### Card Benefits 
-- Incluse additinal module to view benefits for each card
+### Admin Functionaly
+- Implement admin functionality so that the admin can see all of user picks, edit or delete picks for any user etc. 
 
-### Login Strategies
-- Implement Login Strategies for LinkedIn and Facebook as well
-- Implement separate login functionality managed by the app itself. 
+### Country Flags
+- Get flags from https://www.countryflags.io/ to display any time a country is displayed
+
+### Group Stage Numbering
+- Add numbering functionality to the group stage drag and drop, so that when a country is dropped, a number will be rendered for the position. 
 
 ## Bugs
-- Card View - Only first page , on click opend edit card page. Second, third page onwards don't click :/
-- Editing user information in the edit card flow, actually just changes the name of the user in the user document. Instead of attaching the user ._id to the card applicant field
+- User Dashboard - The checklist for 'Group Results Simulated' and 'Points Calculated' fields do not set properly until page is refreshed. 
+- Submit Picks routing - When the user clicks 'Submit Picks' in Group Stage page, the `Link` is setup up route to `/currentPicks`, but it does not, it stays on the same page. 
+``` javascript
+<div className='submitBtnWrapper'>            
+    <Link to='/currentPicks' onClick={(e) => props.handleSubmit(e)} className="btn waves-effect waves-light submitGrpPicks">Submit Picks</Link>
+</div>
+```
 
 ## Key Takeaways
-- I love doing this. 
-- REALLY think through models BEFORE starting to implement code
+- React kicked my butt 
+- React Routing and Links are incredibly powerful 
 - Implement OAUTH before writing the bulk of your code. 
