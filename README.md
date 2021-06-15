@@ -85,7 +85,7 @@ These were the wireframes I created before starting to write any code for this p
 **ERD - Initial Design:**
 ![erd](https://i.imgur.com/m5xtNOn.png)
 
-**ERD - Final Schema:**
+**ERD - Final Schemas:**
 ```javascript
 const picksSchema = new mongoose.Schema({
     'Group A': [],
@@ -104,6 +104,26 @@ const picksSchema = new mongoose.Schema({
     uid: String,
     username: String,
     photo: String
+},
+    {
+        timestamps: true
+    }
+);
+
+
+const resultsSchema = new mongoose.Schema({
+    'Group A': [],
+    'Group B': [],
+    'Group C': [],
+    'Group D': [],
+    'Group E': [],
+    'Group F': [],
+    'Group G': [],
+    'Group H': [],
+    roundOf16Results: {},
+    quartersResults: {},
+    semisResults: {},
+    finalResult: String,
 },
     {
         timestamps: true
@@ -252,6 +272,7 @@ function create(req, res) {
 ```
 
 ## Key Takeaways
-- React kicked my butt 
+- React kicked my butt, it's going to take some time to by comfortable with it
+- State can be very hard to manage, especially when you are conducting multiple CRUD functionalities, and have to adjust state every time. 
+- I need to understand react hooks a bit better. 
 - React Client side routing and Links are incredibly powerful, and with the use of 'Pages', make it easy easy and fun to create a SPA (Single Page Application)
-- Implement OAUTH before writing the bulk of your code. 
