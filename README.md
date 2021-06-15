@@ -253,15 +253,16 @@ function create(req, res) {
 
 ## Bugs
 - User Dashboard - The checklist for 'Group Results Simulated' and 'Points Calculated' fields do not set properly until page is refreshed. 
-- Submit Picks routing - When the user clicks 'Submit Picks' in Group Stage page, the `Link` is setup up route to `/currentPicks`, but it does not, it stays on the same page. 
-``` javascript
+- <strike>Submit Picks routing - When the user clicks 'Submit Picks' in Group Stage page, the `Link` is setup up route to `/currentPicks`, but it does not, it stays on the same page. 
 <div className='submitBtnWrapper'>            
     <Link to='/currentPicks' onClick={(e) => props.handleSubmit(e)} className="btn waves-effect waves-light submitGrpPicks">Submit Picks</Link>
 </div>
-```
+```</strike>  
+        - This bug has been fixed. 
 
 ## Key Takeaways
 - React kicked my butt, it's going to take some time to by comfortable with it
 - State can be very hard to manage, especially when you are conducting multiple CRUD functionalities, and have to adjust state every time. 
+- I need to understand the concept of `prevState` and `spread operators` a bit better 
 - I need to understand react hooks a bit better. 
 - React Client side routing and Links are incredibly powerful, and with the use of 'Pages', they make it easy and fun to create a SPA (Single Page Application)
