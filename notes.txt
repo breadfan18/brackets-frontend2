@@ -5,6 +5,10 @@ Order of the presentation:
 3. Make group stage picks - open dev drawer and see it being added to state
 4. Submit gruop stage picks
 5. Go to Simulate tab > Simulate Group Results > Commit Group Results
-6. Go to Home > REFRESH PAGE > Go back to Simulate Tab > Only then Calculate points
-7. Go to leaderboard
+6. Go to Home > REFRESH PAGE > Check the Group Stage Game Simulation Checklist updated
+7. Go back to Simulate Tab > Only then Calculate points
+8. Go to Home > Refresh page to see Point calculation Status updated.
+9. Go back to CurrentPicks > Delete Picks
+10. Go back to Home Page > Refresh page > Checklist for Group Stage Picks made updated. Total Points as well
+
 
