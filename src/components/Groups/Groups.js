@@ -1,5 +1,6 @@
 import Group from '../Group/Group';
 import style from './Groups.module.css';
+import { Link } from 'react-router-dom';
 
 const Groups = (props) => {
 
@@ -17,7 +18,10 @@ const Groups = (props) => {
                     )
                 }
             </div>
-            <div className='submitBtnWrapper'><button className="btn waves-effect waves-light submitGrpPicks" type="submit" onClick={(e) => props.handleSubmit(e)}>Submit Picks</button></div>
+            <div className='submitBtnWrapper'>
+                {/* <button className="btn waves-effect waves-light submitGrpPicks" type="submit" onClick={(e) => props.handleSubmit(e)}>Submit Picks</button> */}
+                <Link to='/' onClick={(e) => props.handleSubmit(e)} className="btn waves-effect waves-light submitGrpPicks">Submit Picks</Link>
+            </div>
         </>
     )
 }
