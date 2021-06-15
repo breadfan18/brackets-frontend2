@@ -52,13 +52,13 @@ const Leaderboard = () => {
                         allPicksArr.map((user, idx) => (
                             <tr>
                                 <td>
-                                    <img src={
-                                        idx < 3 ? medalImgsArr[idx] : potatoImg
-                                    } alt="gold"
-                                        style={{ height: '3.3rem' }}
-                                    />
+                                    <img src={idx < 3 ? medalImgsArr[idx] : potatoImg} alt="gold"style={{ height: '3.5rem' }}/>
                                 </td>
-                                <td>{user.username}</td>
+                                <td className={styles.userImg}>
+                                    <img src={user.photo} alt="" 
+                                    style={{height: '3.5rem', borderRadius: '50%'}}
+                                
+                                />{user.username}</td>
                                 <td>{user.totalPoints}</td>
                                 <td>0</td>
                                 <td>0</td>

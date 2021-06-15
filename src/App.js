@@ -72,6 +72,7 @@ export default function App() {
       pickSaved: userPicks.pickSaved,
       totalPoints: 0,
       username: userState.user.displayName,
+      userImg: userState.user.photoURL,
       picks: {
         ...userPicks.picks,
         [groupLetterKey]: teams
@@ -86,11 +87,12 @@ export default function App() {
     if (userPicks.pickSaved) {
       console.log('Pick already saved');
     } else {
-      const pick = await createPicks(userPicks.picks, userState.user.displayName, userPicks.totalPoints, userState.user.uid);
+      const pick = await createPicks(userPicks.picks, userState.user.displayName, userState.user.photoURL, userPicks.totalPoints, userState.user.uid);
       setUserPicks({
         allPicks: [...userPicks.allPicks, pick],
         totalPoints: userPicks.totalPoints,
         username: userState.user.displayName,
+        userImg: userState.user.photoURL,
         pickSaved: true
       }
       )

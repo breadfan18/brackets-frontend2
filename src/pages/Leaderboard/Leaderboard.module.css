@@ -41,3 +41,12 @@
     font-weight: bold;
     font-size: 1.8rem;
 }
+
+.userImg {
+    display: flex;
+    align-items: center;
+}
+
+.userImg > img {
+    margin-right: 15px;
+}
