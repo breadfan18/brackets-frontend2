@@ -112,15 +112,13 @@ const picksSchema = new mongoose.Schema({
 
 ## Challenges
 
-### Create Card Adding Data was Cumbersome
+### Making Group Stage Selections 
 **Problem**
-- My create card form was quite a long one, so whenever i needed to create a card, it took quite a bit of my time in order to create a card. I need to automate this process.
+- I needed to capture the group stage finishing positions predicted by each user. Thinking through how to properly capture the order of positions for each group captured by each user took me a while to think through. 
 
 **Solution**
-- Imported an npm package called `webdriverIO` which is a testing framework. But can also be used to automate the web ui. 
-- Wrote a `wdio script` for the addCard flow to quickly create card data whenever i needed it. 
-- Also imported an npm package called `chance` that is super useful for creating random data. So i used the chance package to create a random credit card name, numbers and dates so I wouldn't have to submit any information for the `createCard script`
-- DEMO SOLUTION!
+- I researched online and found these `react-sortable-hoc` and `array-move` libraries that allow to "Drag and Drop" react components. This would allow the user to easily drap the teams to the positions they want to predict. 
+- The implementation took a while due to the learning curve, and capturing data and saving them in state also took a while due to added complications, but in the end, the implementation worked out great. 
 
 ### Create Card flow - User for a new card application could not be found
 **Problem**
