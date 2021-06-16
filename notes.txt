@@ -4,7 +4,9 @@ Order of the presentation:
 2. Login with Firebase
 
 
-3. Show Group Stage tab, knockout stages tab, And Simulate tab. 
+1. Go through Project Intro, Tech Used, Services modules, Wireframes and ERD
+
+2. Show Group Stage tab, knockout stages tab, And Simulate tab. 
 3. Make group stage picks - open dev drawer and see it being added to state
 4. Submit gruop stage picks
 5. Go to Simulate tab > Simulate Group Results > Commit Group Results
@@ -13,5 +15,26 @@ Order of the presentation:
 8. Go to Home > Refresh page to see Point calculation Status updated.
 9. Go back to CurrentPicks > Delete Picks
 10. Go back to Home Page > Refresh page > Checklist for Group Stage Picks made updated. Total Points as well
+
+
+11. Go back to Readme 
+12. Challenges and Favorite Component
+
+
+
+Jordan Lee
+Natalie  McCook
+Camille Ocampo
+Viraj  Patel
+Jam Jam James  Perey
+Betty Reaney
+Sihui  Shen
+Niladri Sinha
+Mohamed Soliman
+Nathan Tellers
+Swaroop Uprety
+Julia Vavrinyuk
+
+
 
 

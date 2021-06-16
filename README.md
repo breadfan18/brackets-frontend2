@@ -37,8 +37,8 @@ Soccer Brackets is a simple React app, that allows users to make predictions for
 
 **Service**|**URL/Endpoint**|**Usage**|
 |-------------|-------------|-------------|
-|3rd Party API - Group Games|`https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.groups.json`|Get all World Cup Group Games JSON
-|3rd Party API - Results|`https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.standings.json`|Get all World Cup Games Results JSON
+|Soccer API - Group Games|`https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.groups.json`|Get all World Cup Group Games JSON
+|Soccer API - Results|`https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.standings.json`|Get all World Cup Games Results JSON
 |Picks Service|`https://brackets-backend.herokuapp.com/api/picks`|URL
 |Firebase|`login`|Log In
 ||`logout`|Log Out
