@@ -8,7 +8,7 @@ Order of the presentation:
 
 2. Show Group Stage tab, knockout stages tab, And Simulate tab. 
 3. Make group stage picks - open dev drawer and see it being added to state
-4. Submit gruop stage picks
+4. Submit group stage picks
 5. Go to Simulate tab > Simulate Group Results > Commit Group Results
 6. Go to Home > REFRESH PAGE > Check the Group Stage Game Simulation Checklist updated
 7. Go back to Simulate Tab > Only then Calculate points
@@ -22,13 +22,7 @@ Order of the presentation:
 
 
 
-Jordan Lee
-Natalie  McCook
-Camille Ocampo
-Viraj  Patel
-Jam Jam James  Perey
-Betty Reaney
-Sihui  Shen
+
 Niladri Sinha
 Mohamed Soliman
 Nathan Tellers
