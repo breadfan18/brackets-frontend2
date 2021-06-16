@@ -210,11 +210,11 @@ const Group = (props) => {
 ## Bugs
 - User Dashboard - The checklist for 'Group Results Simulated' and 'Points Calculated' fields do not set properly until page is refreshed. 
 - <strike>Submit Picks routing - When the user clicks 'Submit Picks' in Group Stage page, the `Link` is setup up route to `/currentPicks`, but it does not, it stays on the same page. </strike>  --> **FIXED**
-```javascript 
-    > <strike><div className='submitBtnWrapper'>            
-    >    <Link to='/currentPicks' onClick={(e) => props.handleSubmit(e)} className="btn > waves-effect waves-light submitGrpPicks">Submit Picks</Link>
-    > </div> </strike>
-```
+    ```javascript 
+    <div className='submitBtnWrapper'>            
+        <Link to='/currentPicks' onClick={(e) => props.handleSubmit(e)} className="btn > waves-effect waves-light submitGrpPicks">Submit Picks</Link>
+    </div> 
+    ```
 
 
 ## Key Takeaways
