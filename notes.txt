@@ -1,11 +1,7 @@
 Order of the presentation:
 
-1. Delete all Results and Picks Data for a user. Leave 3/4 picks data for some users so it shows points in Leaderboard
-2. Login with Firebase
-
 
 1. Go through Project Intro, Tech Used, Services modules, Wireframes and ERD
-
 2. Show Group Stage tab, knockout stages tab, And Simulate tab. 
 3. Make group stage picks - open dev drawer and see it being added to state
 4. Submit group stage picks
@@ -15,19 +11,10 @@ Order of the presentation:
 8. Go to Home > Refresh page to see Point calculation Status updated.
 9. Go back to CurrentPicks > Delete Picks
 10. Go back to Home Page > Refresh page > Checklist for Group Stage Picks made updated. Total Points as well
-
-
 11. Go back to Readme 
 12. Challenges and Favorite Component
 
 
-
-
-Niladri Sinha
-Mohamed Soliman
-Nathan Tellers
-Swaroop Uprety
-Julia Vavrinyuk
 
 
 
