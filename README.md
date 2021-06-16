@@ -76,7 +76,8 @@ These were the wireframes I created before starting to write any code for this p
 - The only schema needed for this application is the `Picks Schema', which can hold information for group stage picks, and also for all the knockout round picks. 
 
 **ERD - Initial Design:**
-![erd](https://i.imgur.com/m5xtNOn.png)
+
+<img src="https://i.imgur.com/m5xtNOn.png" alt="erd" width="300"/>
 
 **ERD - Final Schemas:**
 ```javascript
@@ -219,6 +220,6 @@ const Group = (props) => {
 ## Key Takeaways
 - React kicked my butt, it's going to take some time to by comfortable with it
 - State can be very hard to manage, especially when you are conducting multiple CRUD functionalities, and have to adjust state every time. 
-- I need to understand the concept of `prevState` and `spread operators` a bit better 
-- I need to understand react hooks a bit better. 
+- Need to understand the concept of `prevState` and `spread operators` a bit better 
+- Need to understand react hooks a bit better. 
 - React Client side routing and Links are incredibly powerful, and with the use of 'Pages', they make it easy and fun to create a SPA (Single Page Application)
