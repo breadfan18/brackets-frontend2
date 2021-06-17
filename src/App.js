@@ -24,7 +24,6 @@ export default function App() {
   })
   const [results, setResults] = useState({});
   const [userState, setUserState] = useState({
-    user: null
   });
 
   //UseEffect Hook
