@@ -134,6 +134,7 @@ export default function App() {
           resultsArr.push(team);
         });
       }
+      
       counter2++;
     }
 
